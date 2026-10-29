@@ -1,0 +1,33 @@
+{
+  "courseId": "21910-2008",
+  "courseName": "การผลิตสื่อดิจิทัล",
+  "status": "พร้อมใช้งาน",
+  "description": "หลักสูตร ปวช. สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล — การผลิตสื่อดิจิทัล การวางแผน บรีฟ และออกแบบสตอรี่บอร์ด",
+  "units": [
+    {
+      "unitId": "unit-01",
+      "unitNumber": 1,
+      "title": "หลักการและประเภทของสื่อดิจิทัล",
+      "status": "รอการยืนยัน",
+      "slideCount": 0,
+      "presentations": []
+    },
+    {
+      "unitId": "unit-02",
+      "unitNumber": 2,
+      "title": "การวางแผนและออกแบบสื่อดิจิทัล",
+      "status": "พร้อมใช้งาน",
+      "slideCount": 32,
+      "presentations": [
+        {
+          "id": "21910-2008-u02-html",
+          "title": "สไลด์สื่อการสอน HTML Interactive",
+          "presentationType": "html-interactive",
+          "slideCount": 32,
+          "entryPoint": "courses/21910-2008/unit-02/html-presentation/index.html",
+          "features": ["Interactive Quiz", "Interactive Glossary", "Before/After Slider", "Interactive Diagram", "Speaker Notes", "Presentation Timer", "PDF Export"]
+        }
+      ]
+    }
+  ]
+}

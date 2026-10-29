@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 460" fill="none">
+  <rect width="860" height="460" rx="24" fill="#F8FAFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="430" y="34" text-anchor="middle" font-family="Prompt, sans-serif" font-size="19" font-weight="700" fill="#18243D">โครงร่าง 7 องค์ประกอบสำคัญของเว็บไซต์ธุรกิจ (Annotated Wireframe)</text>
+
+  <!-- Browser Frame -->
+  <g transform="translate(40, 50)">
+    <rect width="780" height="386" rx="16" fill="#FFFFFF" stroke="#4778F5" stroke-width="2.5"/>
+    
+    <!-- 1. Header & 2. Navigation -->
+    <rect x="16" y="14" width="280" height="46" rx="10" fill="#DDEBFF" stroke="#4778F5" stroke-width="1.5"/>
+    <text x="28" y="42" font-family="Prompt, sans-serif" font-size="14" font-weight="700" fill="#1E40AF">① ส่วนหัว (Header): โลโก้ &amp; ชื่อร้านกาแฟ</text>
+
+    <rect x="308" y="14" width="456" height="46" rx="10" fill="#EDE5FF" stroke="#8B5CF6" stroke-width="1.5"/>
+    <text x="324" y="42" font-family="Prompt, sans-serif" font-size="14" font-weight="700" fill="#5B21B6">② เมนูนำทาง (Navigation): หน้าแรก | สินค้า | เกี่ยวกับเรา | ติดต่อเรา</text>
+
+    <!-- 3. Hero Section & 5. CTA -->
+    <rect x="16" y="72" width="748" height="106" rx="12" fill="#F0F7FF" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="36" y="102" font-family="Prompt, sans-serif" font-size="16" font-weight="700" fill="#18243D">③ ส่วนแนะนำหลัก (Hero Section): “กาแฟสดจากเมล็ดกาแฟคุณภาพของชุมชน”</text>
+    <text x="36" y="128" font-family="Prompt, sans-serif" font-size="13.5" fill="#52627D">ภาพเครื่องดื่มเด่นและจุดขายสำคัญที่ช่วยให้ลูกค้าเข้าใจจุดเด่นของร้านได้ทันที</text>
+    
+    <rect x="36" y="138" width="290" height="30" rx="8" fill="#4778F5"/>
+    <text x="181" y="158" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">⑤ ปุ่ม CTA: “ดูเมนูทั้งหมด” / “สั่งซื้อเลย”</text>
+
+    <!-- 4. Product/Service & 6. Contact -->
+    <rect x="16" y="190" width="488" height="122" rx="12" fill="#D5F5E8" stroke="#10B981" stroke-width="1.5"/>
+    <text x="32" y="216" font-family="Prompt, sans-serif" font-size="15" font-weight="700" fill="#065F46">④ ส่วนสินค้าและบริการ (Product / Service)</text>
+    <rect x="32" y="228" width="218" height="72" rx="8" fill="#FFFFFF"/>
+    <text x="141" y="254" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13" font-weight="700" fill="#18243D">☕ อเมริกาโน่น้ำผึ้ง — 50 บาท</text>
+    <text x="141" y="276" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">รูปชัดเจน + ราคา + รายละเอียดครบ</text>
+    <rect x="266" y="228" width="222" height="72" rx="8" fill="#FFFFFF"/>
+    <text x="377" y="254" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13" font-weight="700" fill="#18243D">🍵 มัทฉะลาเต้เย็น — 55 บาท</text>
+    <text x="377" y="276" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">ช่วยให้ลูกค้าตัดสินใจได้ไม่เสียเวลาถาม</text>
+
+    <rect x="516" y="190" width="248" height="122" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="532" y="216" font-family="Prompt, sans-serif" font-size="15" font-weight="700" fill="#92400E">⑥ ช่องทางติดต่อ (Contact)</text>
+    <text x="532" y="244" font-family="Prompt, sans-serif" font-size="13" fill="#78350F">• เบอร์โทรร้านที่เป็นปัจจุบัน</text>
+    <text x="532" y="268" font-family="Prompt, sans-serif" font-size="13" fill="#78350F">• อีเมล / ช่องทางแชต LINE</text>
+    <text x="532" y="292" font-family="Prompt, sans-serif" font-size="13" fill="#78350F">• แผนที่ตั้งร้านและเวลาเปิด-ปิด</text>
+
+    <!-- 7. Footer -->
+    <rect x="16" y="324" width="748" height="48" rx="10" fill="#18243D"/>
+    <text x="390" y="353" text-anchor="middle" font-family="Prompt, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">⑦ ส่วนท้ายเว็บไซต์ (Footer): ที่อยู่ร้าน • ช่องทางติดต่อ • ลิงก์สำคัญ • ข้อมูลลิขสิทธิ์และนโยบาย</text>
+  </g>
+</svg>

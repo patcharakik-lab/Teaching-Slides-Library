@@ -1,0 +1,21 @@
+{
+  "courseId": "21910-2016",
+  "courseName": "การสร้างเว็บไซต์สำหรับธุรกิจดิจิทัล",
+  "level": "ปวช.2",
+  "unitId": "unit-1-week-2",
+  "unitNumber": "1 (สัปดาห์ที่ 2)",
+  "unitTitle": "ความรู้พื้นฐานเกี่ยวกับเว็บไซต์และธุรกิจดิจิทัล — การทำงานของเว็บไซต์และการวิเคราะห์เว็บไซต์ธุรกิจ",
+  "hours": 4,
+  "presentationType": "html-interactive",
+  "entryPoint": "index.html",
+  "thumbnail": "assets/thumbnails/cover-thumb.svg",
+  "slideCount": 28,
+  "version": "1.2.0",
+  "features": [
+    "universal-image-url-import",
+    "local-asset-management",
+    "universal-visual-zoom-lightbox",
+    "dual-screen-presenter-mode",
+    "editable-speaker-notes"
+  ]
+}

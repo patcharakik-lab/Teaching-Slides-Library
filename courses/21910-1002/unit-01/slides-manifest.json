@@ -1,0 +1,81 @@
+{
+  "courseId": "21910-1002",
+  "unitId": "unit-01",
+  "unitNumber": 1,
+  "unitTitle": "ความรู้พื้นฐานเกี่ยวกับความต้องการทางธุรกิจ",
+  "status": "พร้อมใช้งาน",
+  "totalSlides": 7,
+  "slidesDir": "slides/",
+  "slides": [
+    {
+      "id": "21910-1002-u01-s01",
+      "order": 1,
+      "fileName": "slide-01.png",
+      "path": "slides/slide-01.png",
+      "dimensions": "1672x941",
+      "fileSize": 1784675,
+      "sha256": "393ca3460e9d0d4e165c616e8b7a9781093a046177bdd68261a7e32b4502e704",
+      "status": "ready"
+    },
+    {
+      "id": "21910-1002-u01-s02",
+      "order": 2,
+      "fileName": "slide-02.png",
+      "path": "slides/slide-02.png",
+      "dimensions": "1672x941",
+      "fileSize": 1830962,
+      "sha256": "36bd6fa85cbcbd2749dd8bc317c7662d521e70898f44346026d0df42122cd72f",
+      "status": "ready"
+    },
+    {
+      "id": "21910-1002-u01-s03",
+      "order": 3,
+      "fileName": "slide-03.png",
+      "path": "slides/slide-03.png",
+      "dimensions": "1672x941",
+      "fileSize": 1854781,
+      "sha256": "ea934e96df78f9a2c591488b2590208b340fa01270931b1646d0f4fa219175c7",
+      "status": "ready"
+    },
+    {
+      "id": "21910-1002-u01-s04",
+      "order": 4,
+      "fileName": "slide-04.png",
+      "path": "slides/slide-04.png",
+      "dimensions": "1672x941",
+      "fileSize": 1675286,
+      "sha256": "65e3716581dfc132c0ff2b7a93907c4a8179eb17dace63682ab7ddefdc5eca97",
+      "status": "ready"
+    },
+    {
+      "id": "21910-1002-u01-s05",
+      "order": 5,
+      "fileName": "slide-05.png",
+      "path": "slides/slide-05.png",
+      "dimensions": "1672x941",
+      "fileSize": 1717658,
+      "sha256": "31a74d0b67120c87fdf275a2a12a168997d6c1691b51b9aa46b3495092196bbc",
+      "status": "ready"
+    },
+    {
+      "id": "21910-1002-u01-s06",
+      "order": 6,
+      "fileName": "slide-06.png",
+      "path": "slides/slide-06.png",
+      "dimensions": "1672x941",
+      "fileSize": 1779472,
+      "sha256": "65a590e10b185e9f501ac2fa0aa7af389330382fde1d7e097ddf9ebd6aa408de",
+      "status": "ready"
+    },
+    {
+      "id": "21910-1002-u01-s07",
+      "order": 7,
+      "fileName": "slide-07.png",
+      "path": "slides/slide-07.png",
+      "dimensions": "1672x941",
+      "fileSize": 1756057,
+      "sha256": "ee909979b4bb0570019921efa3db3ff5ee6dfb0611c37ff598ebecd92905bb54",
+      "status": "ready"
+    }
+  ]
+}

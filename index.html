@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คลังสื่อการสอนกลาง — Teaching Presentation Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261027-2">
+</head>
+<body class="theme-light">
+  <div id="app">
+    <!-- Header bar (visible in catalog and course views) -->
+    <header id="main-header" class="main-header">
+      <div class="header-container">
+        <div class="brand" id="brand-home-btn" role="button" tabindex="0">
+          <div class="brand-icon">📚</div>
+          <div class="brand-text">
+            <h1 class="brand-title">Teaching Presentation Library</h1>
+            <p class="brand-subtitle">คลังสื่อการสอนกลางสำหรับสายอาชีวศึกษา</p>
+          </div>
+        </div>
+
+        <!-- Breadcrumb navigation -->
+        <nav id="breadcrumbs" class="breadcrumbs" aria-label="Breadcrumb"></nav>
+
+        <!-- Search Bar -->
+        <div class="search-box-wrapper" id="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="course-search-input" placeholder="ค้นหารหัสวิชา หรือชื่อวิชา..." aria-label="ค้นหารายวิชา">
+          <button id="search-clear-btn" class="btn-icon" title="ล้างการค้นหา" style="display:none;">✕</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="main-content" class="main-content">
+      <!-- 1. Catalog View (List of all courses) -->
+      <section id="catalog-view" class="view-section active">
+        <div class="section-hero">
+          <div class="hero-badge">🎓 ศูนย์รวมสื่อการเรียนรู้ดิจิทัล</div>
+          <h2 class="hero-title">รายวิชาทั้งหมดในคลังสื่อการสอน</h2>
+          <p class="hero-desc">รองรับทั้งสไลด์ภาพ Full-Image 16:9 และสไลด์ HTML Interactive พร้อมแบบทดสอบ คำศัพท์ และโน้ตผู้สอน</p>
+          <div class="stats-pills" id="library-stats">
+            <span class="stat-pill">📘 <strong id="stat-courses-count">0</strong> รายวิชา</span>
+            <span class="stat-pill">📑 <strong id="stat-units-count">0</strong> หน่วยการเรียนรู้</span>
+            <span class="stat-pill">🖥️ <strong id="stat-html-count">0</strong> ชุดสไลด์ HTML</span>
+            <span class="stat-pill">🖼️ <strong id="stat-slides-count">0</strong> สไลด์ภาพ PNG</span>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+            <button class="filter-btn" data-filter="ready">พร้อมใช้งาน</button>
+            <button class="filter-btn" data-filter="pending">รอการยืนยัน</button>
+          </div>
+          <div class="results-count" id="results-count-text">แสดง 0 รายวิชา</div>
+        </div>
+
+        <div id="courses-grid" class="courses-grid" role="list"></div>
+      </section>
+
+      <!-- 2. Course Detail View (Units for selected course) -->
+      <section id="course-view" class="view-section" style="display:none;">
+        <div class="course-header-card">
+          <button id="back-to-catalog-btn" class="btn btn-secondary btn-sm">
+            ← กลับหน้าคลังสื่อ
+          </button>
+          <div class="course-header-info">
+            <div class="course-code-badge" id="course-detail-code">21910-XXXX</div>
+            <h2 class="course-detail-title" id="course-detail-title">ชื่อวิชา</h2>
+            <p class="course-detail-desc" id="course-detail-desc">คำอธิบายรายวิชา</p>
+          </div>
+        </div>
+
+        <div class="units-section-title">
+          <h3>หน่วยการเรียนรู้และสื่อการสอนประจำหน่วย</h3>
+          <span class="badge" id="course-units-count-badge">0 หน่วย</span>
+        </div>
+
+        <div id="units-list" class="units-grid" role="list"></div>
+      </section>
+
+      <!-- 3. Central Presentation Viewer View (Full-Image 16:9) -->
+      <section id="viewer-view" class="view-section viewer-container" style="display:none;">
+        <!-- Top Viewer Floating Controls Bar -->
+        <nav id="viewer-topbar" class="viewer-topbar">
+          <div class="viewer-topbar-left">
+            <button id="viewer-exit-btn" class="btn btn-dark btn-sm" title="กลับไปหน้ารายวิชา (Esc)">
+              ← ออกจากสไลด์
+            </button>
+            <div class="viewer-meta">
+              <span class="viewer-course-badge" id="viewer-course-id">21910-1002</span>
+              <span class="viewer-unit-title" id="viewer-unit-title">หน่วยที่ 1</span>
+            </div>
+          </div>
+
+          <div class="viewer-topbar-center">
+            <div class="slide-counter-wrapper">
+              <button id="nav-first-btn" class="btn-icon" title="ไปสไลด์แรก (Home)">⏮</button>
+              <button id="nav-prev-btn" class="btn-icon" title="สไลด์ก่อนหน้า (Left / PageUp)">◀</button>
+              <div class="slide-counter">
+                <span id="current-slide-num">1</span> / <span id="total-slides-num">7</span>
+              </div>
+              <button id="nav-next-btn" class="btn-icon" title="สไลด์ถัดไป (Right / Space / PageDown)">▶</button>
+              <button id="nav-last-btn" class="btn-icon" title="ไปสไลด์สุดท้าย (End)">⏭</button>
+            </div>
+            <!-- Presentation Timer -->
+            <div class="timer-badge" id="timer-display" title="เวลาการนำเสนอ (คลิกเพื่อเริ่ม/หยุด)">
+              ⏱ <span id="timer-text">00:00</span>
+              <button id="timer-toggle-btn" class="timer-btn" title="เล่น/หยุดเวลา">▶</button>
+              <button id="timer-reset-btn" class="timer-btn" title="รีเซ็ตเวลา">↺</button>
+            </div>
+          </div>
+
+          <div class="viewer-topbar-right">
+            <button id="toc-toggle-btn" class="btn btn-dark btn-sm" title="สารบัญสไลด์">
+              📑 สารบัญ
+            </button>
+            <button id="organizer-toggle-btn" class="btn btn-dark btn-sm" title="Slide Organizer / Grid View (O)">
+              ⊞ จัดการสไลด์
+            </button>
+            <button id="notes-toggle-btn" class="btn btn-dark btn-sm" title="คำบรรยายครู (S)">
+              📝 โน้ตผู้สอน
+            </button>
+            <button id="presenter-mode-btn" class="btn btn-primary btn-sm" title="โหมดผู้สอนแยก 2 หน้าต่าง (P)">
+              🖥️ โหมดผู้สอน
+            </button>
+            <button id="export-pdf-btn" class="btn btn-dark btn-sm" title="ส่งออกเป็น PDF / พิมพ์">
+              🖨️ PDF
+            </button>
+            <button id="fullscreen-toggle-btn" class="btn-icon" title="เต็มหน้าจอ (F)">
+              ⛶
+            </button>
+          </div>
+        </nav>
+
+        <!-- 16:9 Presentation Stage -->
+        <div id="presentation-stage" class="presentation-stage">
+          <div class="aspect-ratio-box" id="aspect-ratio-box">
+            <!-- Loading Indicator -->
+            <div id="slide-loading" class="slide-loading" style="display:none;">
+              <div class="spinner"></div>
+              <span>กำลังโหลดภาพสไลด์...</span>
+            </div>
+
+            <!-- Active Slide Image -->
+            <img id="active-slide-image" class="active-slide-image" src="" alt="Presentation Slide" draggable="false">
+
+            <!-- Clickable Left/Right Stage Hotspots -->
+            <div class="stage-nav-hotspot left" id="hotspot-prev" title="สไลด์ก่อนหน้า">
+              <span class="hotspot-arrow">‹</span>
+            </div>
+            <div class="stage-nav-hotspot right" id="hotspot-next" title="สไลด์ถัดไป">
+              <span class="hotspot-arrow">›</span>
+            </div>
+          </div>
+
+          <!-- Bottom Slide Progress Bar -->
+          <div class="slide-progress-container">
+            <div id="slide-progress-bar" class="slide-progress-bar" style="width: 14%;"></div>
+          </div>
+        </div>
+
+        <!-- Speaker Notes Drawer (Collapsible) -->
+        <aside id="notes-drawer" class="notes-drawer" aria-label="บันทึกคำบรรยายผู้สอน">
+          <div class="notes-header">
+            <div class="notes-title-group">
+              <span class="notes-icon">📝</span>
+              <h3>คำบรรยายผู้สอน (Speaker Notes)</h3>
+            </div>
+            <div class="notes-actions">
+              <button id="notes-export-btn" class="btn-icon-text" title="ส่งออกคำบรรยายเป็น JSON">📥 ส่งออก</button>
+              <label class="btn-icon-text" title="นำเข้าคำบรรยายจาก JSON">
+                📤 นำเข้า
+                <input type="file" id="notes-import-input" accept=".json" style="display:none;">
+              </label>
+              <button id="notes-close-btn" class="btn-icon" title="ปิดหน้าต่างโน้ต">✕</button>
+            </div>
+          </div>
+
+          <div class="notes-body">
+            <div class="notes-meta-bar">
+              <span class="notes-badge" id="notes-slide-id">Slide: 21910-1002-u01-s01</span>
+              <span class="notes-title-preview" id="notes-slide-title">หน้าปกและภาพรวมรายวิชา</span>
+            </div>
+
+            <!-- Notes Editor Area -->
+            <div class="notes-editor-container">
+              <label for="notes-textarea" class="visually-hidden">เนื้อหาคำบรรยายผู้สอน</label>
+              <textarea id="notes-textarea" class="notes-textarea" placeholder="พิมพ์คำบรรยายหรือบันทึกช่วยสอนสำหรับสไลด์นี้..." rows="8"></textarea>
+            </div>
+
+            <div class="notes-footer-bar">
+              <span class="notes-saved-status" id="notes-save-indicator">💾 บันทึกอัตโนมัติแล้ว</span>
+              <button id="notes-reset-btn" class="btn-text-danger" title="คืนค่าคำบรรยายเริ่มต้นของสไลด์นี้">
+                ↺ คืนค่าเดิม
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Slide Organizer / Grid Overview Modal -->
+        <div id="organizer-modal" class="modal-backdrop" style="display:none;">
+          <div class="modal-dialog organizer-dialog">
+            <div class="modal-header">
+              <div class="modal-title-group">
+                <h3>⊞ Slide Organizer (ภาพรวมสไลด์ทั้งหมด)</h3>
+                <span class="badge" id="organizer-total-badge">7 สไลด์</span>
+              </div>
+              <button id="organizer-close-btn" class="btn-icon" title="ปิด (Esc)">✕</button>
+            </div>
+            <div class="modal-body">
+              <div id="organizer-grid" class="organizer-thumbnails-grid"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table of Contents (ToC) Popover / Drawer -->
+        <div id="toc-popover" class="toc-popover" style="display:none;">
+          <div class="toc-header">
+            <h4>📑 สารบัญสไลด์ประจำหน่วย</h4>
+            <button id="toc-close-btn" class="btn-icon" title="ปิด">✕</button>
+          </div>
+          <div id="toc-list" class="toc-list"></div>
+        </div>
+      </section>
+
+      <!-- 4. Presenter Mode (Teacher Window View) -->
+      <section id="presenter-view" class="view-section presenter-view-container" style="display:none;">
+        <div class="presenter-header">
+          <div class="presenter-brand">
+            <span class="presenter-badge">👨‍🏫 PRESENTER MODE (จอผู้สอน)</span>
+            <span id="presenter-course-info" class="presenter-course-info">21910-1002 | หน่วยที่ 1</span>
+          </div>
+          <div class="presenter-timer-box">
+            <span class="timer-label">เวลาที่ใช้บรรยาย:</span>
+            <span id="presenter-timer-display" class="timer-clock">00:00:00</span>
+            <button id="presenter-timer-toggle" class="btn btn-sm btn-dark">เริ่ม/หยุด</button>
+            <button id="presenter-timer-reset" class="btn btn-sm btn-dark">รีเซ็ต</button>
+          </div>
+          <div class="presenter-top-actions">
+            <button id="presenter-open-audience-btn" class="btn btn-sm btn-primary">
+              🖥️ เปิดหน้าต่างนักเรียน (Audience)
+            </button>
+            <button id="presenter-close-btn" class="btn btn-sm btn-secondary">
+              ✕ ปิดโหมดผู้สอน
+            </button>
+          </div>
+        </div>
+
+        <div class="presenter-layout">
+          <!-- Left: Current Slide (Large) -->
+          <div class="presenter-current-panel">
+            <div class="panel-header">
+              <h4>สไลด์ปัจจุบัน (Current Slide <span id="presenter-current-idx">1/7</span>)</h4>
+              <span class="live-sync-indicator">🟢 ซิงค์กับจอนักเรียน</span>
+            </div>
+            <div class="presenter-slide-viewport">
+              <img id="presenter-current-img" class="presenter-img" src="" alt="Current Slide">
+            </div>
+            <!-- Navigation buttons -->
+            <div class="presenter-nav-bar">
+              <button id="presenter-prev-btn" class="btn btn-lg btn-dark">◀ ก่อนหน้า (Left)</button>
+              <div class="presenter-counter">
+                <span id="presenter-curr-num">1</span> / <span id="presenter-total-num">7</span>
+              </div>
+              <button id="presenter-next-btn" class="btn btn-lg btn-primary">ถัดไป (Right / Space) ▶</button>
+            </div>
+          </div>
+
+          <!-- Right Column: Next Slide Preview + Speaker Notes -->
+          <div class="presenter-side-panel">
+            <!-- Next Slide Preview -->
+            <div class="presenter-next-box">
+              <div class="panel-header">
+                <h5>สไลด์ถัดไป (Next Slide Preview)</h5>
+              </div>
+              <div class="presenter-next-viewport">
+                <img id="presenter-next-img" class="presenter-next-img" src="" alt="Next Slide Preview">
+                <div id="presenter-end-notice" class="end-notice" style="display:none;">สิ้นสุดสไลด์แล้ว</div>
+              </div>
+            </div>
+
+            <!-- Presenter Speaker Notes -->
+            <div class="presenter-notes-box">
+              <div class="panel-header">
+                <h5>คำบรรยายและบันทึกช่วยสอน</h5>
+                <span class="notes-sync-badge">Auto-Saved</span>
+              </div>
+              <div class="presenter-notes-content">
+                <textarea id="presenter-notes-textarea" class="presenter-notes-textarea" rows="10"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Audience Window View (Clean 16:9 full slide only) -->
+      <section id="audience-view" class="view-section audience-view-container" style="display:none;">
+        <div class="audience-stage">
+          <img id="audience-slide-img" class="audience-slide-img" src="" alt="Audience Slide">
+        </div>
+      </section>
+
+      <!-- 6. HTML Interactive Presentation Frame View -->
+      <section id="html-viewer-view" class="view-section html-viewer-container" style="display:none;">
+        <nav class="html-viewer-topbar">
+          <div class="viewer-topbar-left">
+            <button id="html-viewer-exit-btn" class="btn btn-dark btn-sm" title="กลับไปหน้ารายวิชา (Esc)">
+              ← กลับหน้ารายวิชา
+            </button>
+            <div class="viewer-meta">
+              <span class="viewer-course-badge" id="html-viewer-course-badge">21910-1002</span>
+              <span class="viewer-unit-title" id="html-viewer-title">สไลด์สื่อการสอน HTML Interactive</span>
+            </div>
+          </div>
+          <div class="viewer-topbar-right">
+            <button id="html-viewer-newtab-btn" class="btn btn-dark btn-sm" title="เปิดในแท็บใหม่แยกต่างหาก">
+              ↗️ เปิดเต็มจอแท็บใหม่
+            </button>
+            <button id="html-viewer-fullscreen-btn" class="btn-icon" title="เต็มหน้าจอ (F)">
+              ⛶
+            </button>
+          </div>
+        </nav>
+        <div class="html-iframe-wrapper">
+          <iframe id="html-presentation-frame" class="html-presentation-frame" src="" allow="fullscreen; clipboard-write; autoplay"></iframe>
+        </div>
+      </section>
+    </main>
+
+    <!-- Hidden Print Container for High-Res PDF Export -->
+    <div id="print-container" class="print-container" style="display:none;" aria-hidden="true"></div>
+  </div>
+
+  <script src="app.js?v=20261027-2"></script>
+</body>
+</html>

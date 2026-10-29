@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" fill="none">
+  <rect width="840" height="480" rx="22" fill="#0B1026"/>
+
+  <!-- Left Card: Layout 1 Product-Focused -->
+  <g transform="translate(35, 32)">
+    <rect width="365" height="416" rx="18" fill="#FFFBEB" stroke="#F59E0B" stroke-width="3"/>
+    <rect x="18" y="16" width="160" height="32" rx="999" fill="#B45309"/>
+    <text x="98" y="38" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="15" font-weight="700">แบบที่ 1: เน้นภาพสินค้า</text>
+    <circle cx="328" cy="34" r="18" fill="#059669"/>
+    <text x="328" y="40" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="11" font-weight="700">LOGO</text>
+
+    <!-- Big Dessert Showcase Box -->
+    <rect x="24" y="64" width="317" height="195" rx="14" fill="#FEF3C7" stroke="#FCD34D" stroke-width="2"/>
+    <!-- Stylized Layered Thai Dessert (Khanom Chan & Thong Yip) -->
+    <rect x="55" y="110" width="120" height="22" rx="6" fill="#10B981"/>
+    <rect x="55" y="134" width="120" height="22" rx="6" fill="#A7F3D0"/>
+    <rect x="55" y="158" width="120" height="22" rx="6" fill="#059669"/>
+    <rect x="55" y="182" width="120" height="22" rx="6" fill="#6EE7B7"/>
+    <circle cx="245" cy="155" r="46" fill="#F59E0B"/>
+    <circle cx="245" cy="155" r="28" fill="#FDE047"/>
+    <text x="182" y="242" text-anchor="middle" fill="#92400E" font-family="Prompt, sans-serif" font-size="15" font-weight="700">ภาพถ่ายขนมขนาดใหญ่ (Raster คมชัด)</text>
+
+    <!-- Product Title & Big Price Badge -->
+    <text x="24" y="296" fill="#451A03" font-family="Prompt, sans-serif" font-size="24" font-weight="800">ขนมไทยบ้านเรา หอมสดใหม่</text>
+    <text x="24" y="326" fill="#78350F" font-family="Prompt, sans-serif" font-size="16">ขนมชั้นใบเตยแท้ &amp; ทองหยิบชาววัง ทำสดทุกวัน</text>
+
+    <rect x="24" y="346" width="195" height="48" rx="12" fill="#059669"/>
+    <text x="121" y="377" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="18" font-weight="700">สั่งซื้อ: FB ขนมบ้านเรา</text>
+
+    <rect x="232" y="342" width="110" height="54" rx="12" fill="#D97706"/>
+    <text x="287" y="378" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="24" font-weight="800">59.-</text>
+  </g>
+
+  <!-- Right Card: Layout 2 Graphic & Structured Text -->
+  <g transform="translate(440, 32)">
+    <rect width="365" height="416" rx="18" fill="#ECFDF5" stroke="#10B981" stroke-width="3"/>
+    <!-- Modern Geometric Color Block -->
+    <path d="M0 18 Q0 0 18 0 L347 0 Q365 0 365 18 L365 155 L0 205 Z" fill="#065F46"/>
+    <rect x="18" y="16" width="195" height="32" rx="999" fill="#22D3EE"/>
+    <text x="115" y="38" text-anchor="middle" fill="#0B1026" font-family="Prompt, sans-serif" font-size="15" font-weight="800">แบบที่ 2: เน้นกราฟิก &amp; สัดส่วน</text>
+
+    <text x="24" y="86" fill="#FEF08A" font-family="Prompt, sans-serif" font-size="25" font-weight="800">ชุดกล่องของฝากมงคล</text>
+    <text x="24" y="118" fill="#D1FAE5" font-family="Prompt, sans-serif" font-size="16">“ขนมไทยทำสดใหม่ทุกวัน หวานกำลังดี”</text>
+
+    <!-- Structured Split Grid -->
+    <rect x="24" y="148" width="155" height="175" rx="14" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="2"/>
+    <circle cx="101" cy="212" r="42" fill="#10B981"/>
+    <circle cx="101" cy="212" r="24" fill="#A7F3D0"/>
+    <text x="101" y="286" text-anchor="middle" fill="#065F46" font-family="Prompt, sans-serif" font-size="15" font-weight="700">ขนมชั้น &amp; ขนมตาล</text>
+    <text x="101" y="308" text-anchor="middle" fill="#047857" font-family="Prompt, sans-serif" font-size="13">ภาพสินค้าจัดในกรอบ</text>
+
+    <rect x="194" y="148" width="147" height="175" rx="14" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="2"/>
+    <text x="267" y="184" text-anchor="middle" fill="#065F46" font-family="Prompt, sans-serif" font-size="16" font-weight="700">จุดเด่นร้านเรา</text>
+    <text x="210" y="214" fill="#1E293B" font-family="Prompt, sans-serif" font-size="14">✓ กะทิคั้นสด 100%</text>
+    <text x="210" y="240" fill="#1E293B" font-family="Prompt, sans-serif" font-size="14">✓ ไม่ใส่วัตถุกันเสีย</text>
+    <text x="210" y="266" fill="#1E293B" font-family="Prompt, sans-serif" font-size="14">✓ ส่งด่วนในเขตเมือง</text>
+    <rect x="212" y="282" width="112" height="30" rx="8" fill="#FEF3C7"/>
+    <text x="268" y="303" text-anchor="middle" fill="#B45309" font-family="Prompt, sans-serif" font-size="16" font-weight="800">กล่องละ 59.-</text>
+
+    <!-- Bottom Contact Bar -->
+    <rect x="24" y="342" width="317" height="52" rx="12" fill="#047857"/>
+    <text x="182" y="374" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="17" font-weight="700">โทร. 08x-xxx-xxxx | FB: ร้านขนมบ้านเรา</text>
+  </g>
+</svg>

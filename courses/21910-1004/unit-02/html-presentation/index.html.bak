@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21910-1004 หน่วยที่ 2: กระบวนการซื้อขายและการทำธุรกรรมออนไลน์</title>
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP CONTROL BAR -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <div class="course-badge">
+                <i class="fa-solid fa-cart-shopping brand-icon-fa"></i>
+                <span>21910-1004</span>
+            </div>
+            <div class="unit-header-title">
+                หน่วยที่ 2: กระบวนการซื้อขายและการทำธุรกรรมออนไลน์
+                <span>(ปวช. สัปดาห์ที่ 3–4)</span>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <button class="tool-btn" onclick="window.toggleTocModal()" title="ดูสารบัญสไลด์ (กด T)">
+                <i class="fa-solid fa-table-cells-large"></i> สารบัญ (T)
+            </button>
+            <button class="tool-btn" onclick="window.toggleVocabModal()" title="คลังคำศัพท์วิชาชีพ (กด G)">
+                <i class="fa-solid fa-book-bookmark"></i> คำศัพท์ (G)
+            </button>
+            <button class="tool-btn" onclick="window.toggleNotesDrawer()" title="บันทึกผู้สอน (กด N)">
+                <i class="fa-solid fa-chalkboard-user"></i> บันทึกผู้สอน (N)
+            </button>
+            <button class="tool-btn" onclick="window.openPresenterMode()" title="เปิดหน้าต่างจอผู้สอนซิงค์สองจอ (กด P)">
+                <i class="fa-solid fa-display"></i> จอผู้สอน (P)
+            </button>
+            <button class="tool-btn primary-tool" onclick="window.openImageImportModal()" title="นำเข้าภาพประกอบผ่าน URL (กด I)">
+                <i class="fa-solid fa-cloud-arrow-up"></i> นำเข้าภาพ (I)
+            </button>
+            <button class="tool-btn" onclick="window.toggleShortcutsModal()" title="คู่มือปุ่มลัดสำหรับครูผู้สอน (กด ?)">
+                <i class="fa-solid fa-keyboard"></i> ปุ่มลัดครู (?)
+            </button>
+            <button class="tool-btn" onclick="window.print()" title="พิมพ์หรือบันทึกเป็นเอกสาร PDF">
+                <i class="fa-solid fa-print"></i> พิมพ์ PDF
+            </button>
+            <button class="tool-btn" onclick="window.toggleFullscreen()" title="แสดงแบบเต็มหน้าจอ (กด F)">
+                <i class="fa-solid fa-expand"></i> เต็มจอ (F)
+            </button>
+        </div>
+    </header>
+
+    <!-- STAGE WRAPPER & 16:9 RESPONSIVE SCALING CANVAS (1600 x 900) -->
+    <main class="stage-wrapper" id="stageWrapper">
+        <div class="slide-scale-wrapper" id="slideScaleWrapper">
+            <div class="slide-canvas" id="slideCanvas">
+                <!-- Dynamic Slide Header -->
+                <div class="canvas-slide-header" id="canvasHeader">
+                    <div class="header-meta-left">
+                        <span class="slide-kicker-tag" id="slideKicker">UNIT 2 • ONLINE TRANSACTION &amp; E-COMMERCE</span>
+                        <h2 class="slide-main-title" id="slideTitle">กำลังโหลดเนื้อหา...</h2>
+                    </div>
+                    <div class="header-meta-right">
+                        <span class="slide-badge-pill" id="slideBadge"><i class="fa-solid fa-award"></i> แผนการสอน</span>
+                        <span class="slide-time-pill" id="slideTime"><i class="fa-regular fa-clock"></i> 5 นาที</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Slide Viewport -->
+                <div class="canvas-slide-body" id="canvasBody">
+                    <!-- Slide content rendered by app.js -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- BOTTOM CONTROL BAR -->
+    <footer class="bottom-bar">
+        <div class="bottom-bar-left">
+            <button class="nav-btn-icon" id="btnFirst" onclick="window.jumpToSlide(0)" title="สไลด์แรกสุด (Home)">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button class="nav-btn-icon" id="prevBtn" onclick="window.prevSlide()" title="สไลด์ก่อนหน้า (← / PageUp)">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="slide-counter-box">
+                <input type="number" id="slideInput" min="1" max="32" value="1" class="slide-input-field" onchange="window.jumpToSlideInput(this.value)">
+                <span>/ <strong id="slideTotal">32</strong></span>
+            </div>
+            <button class="nav-btn-icon primary-nav" id="nextBtn" onclick="window.nextSlide()" title="สไลด์ถัดไป (→ / Space / PageDown)">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="nav-btn-icon" id="btnLast" onclick="window.jumpToSlide(31)" title="สไลด์สุดท้าย (End)">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+        </div>
+
+        <div class="bottom-bar-center">
+            <div class="progress-track" id="progressTrack" onclick="window.seekProgress(event)" title="คลิกเพื่อข้ามไปยังสไลด์">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+            <span class="progress-percentage" id="progressPercent">3%</span>
+        </div>
+
+        <div class="bottom-bar-right">
+            <div class="timer-badge">
+                <i class="fa-regular fa-stopwatch"></i>
+                <span id="elapsedTimer">00:00</span>
+            </div>
+            <div class="shortcut-hints-strip" onclick="window.toggleShortcutsModal()" title="คลิกเพื่อเปิดคู่มือปุ่มลัดสำหรับครูผู้สอน">
+                <span><kbd>←</kbd><kbd>→</kbd> เลื่อน</span>
+                <span><kbd>T</kbd> สารบัญ</span>
+                <span><kbd>G</kbd> คำศัพท์</span>
+                <span><kbd>N</kbd> บันทึกครู</span>
+                <span><kbd>P</kbd> จอครู</span>
+                <span><kbd>F</kbd> เต็มจอ</span>
+                <span><kbd>?</kbd> วิธีใช้</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SPEAKER NOTES DRAWER -->
+    <aside class="notes-drawer" id="notesDrawer">
+        <div class="notes-drawer-header">
+            <div><i class="fa-solid fa-chalkboard-user"></i> บันทึกสำหรับผู้สอน (Teacher Notes)</div>
+            <button class="dialog-close-btn" onclick="window.toggleNotesDrawer()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="notes-drawer-body">
+            <div class="note-section-box">
+                <div class="n-lbl"><i class="fa-solid fa-comment-dots"></i> สิ่งที่ครูควรพูดบรรยาย (Script):</div>
+                <p id="noteWhatToSay">-</p>
+            </div>
+            <div class="note-section-box">
+                <div class="n-lbl"><i class="fa-solid fa-lightbulb"></i> ตัวอย่างประกอบในชีวิตจริง:</div>
+                <p id="noteRealLife">-</p>
+            </div>
+            <div class="note-section-box">
+                <div class="n-lbl"><i class="fa-solid fa-circle-question"></i> คำถามชวนคิดสำหรับนักเรียน:</div>
+                <p id="noteQuestion">-</p>
+            </div>
+            <div class="note-section-box">
+                <div class="n-lbl"><i class="fa-solid fa-bullseye"></i> แนวคำตอบที่คาดหวัง:</div>
+                <p id="noteExpected">-</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- TABLE OF CONTENTS (TOC) MODAL -->
+    <div class="toc-grid-modal" id="tocModal" onclick="window.handleModalBackdropClick(event, 'tocModal')">
+        <div class="modal-content-card">
+            <div class="dialog-header">
+                <h3><i class="fa-solid fa-table-cells-large"></i> สารบัญสไลด์การสอนทั้งหมด (32 สไลด์)</h3>
+                <button class="dialog-close-btn" onclick="window.toggleTocModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="toc-cards-grid" id="tocCardsContainer">
+                <!-- Populated dynamically by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- VOCABULARY / GLOSSARY MODAL -->
+    <div class="vocab-modal" id="vocabModal" onclick="window.handleModalBackdropClick(event, 'vocabModal')">
+        <div class="modal-content-card">
+            <div class="dialog-header">
+                <h3><i class="fa-solid fa-book-bookmark"></i> คลังคำศัพท์วิชาชีพ (Vocab &amp; Glossary)</h3>
+                <button class="dialog-close-btn" onclick="window.toggleVocabModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div style="padding:16px 20px 0 20px;">
+                <input type="text" id="vocabSearchInput" placeholder="ค้นหาคำศัพท์ภาษาไทยหรืออังกฤษ..." class="form-input" oninput="window.filterVocabList(this.value)">
+            </div>
+            <div class="vocab-list-container" id="vocabListContainer" style="padding:16px 20px; overflow-y:auto; display:flex; flex-direction:column; gap:12px;">
+                <!-- Populated dynamically by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- UNIVERSAL VISUAL ZOOM & LIGHTBOX MODAL (Part 21.6) -->
+    <div class="zoom-lightbox-modal" id="zoomLightboxModal">
+        <div class="lightbox-top-toolbar">
+            <div class="lightbox-title-text" id="lightboxTitle">
+                <i class="fa-solid fa-image"></i> ภาพประกอบการเรียนรู้
+            </div>
+            <div class="lightbox-controls-group">
+                <button class="lb-btn" onclick="window.zoomLightbox(1.2)" title="ซูมเข้า (Zoom In)"><i class="fa-solid fa-magnifying-glass-plus"></i> ซูมเข้า</button>
+                <button class="lb-btn" onclick="window.zoomLightbox(0.8)" title="ซูมออก (Zoom Out)"><i class="fa-solid fa-magnifying-glass-minus"></i> ซูมออก</button>
+                <button class="lb-btn" onclick="window.resetLightboxZoom()" title="พอดีหน้าจอ (Fit Screen)"><i class="fa-solid fa-arrows-to-eye"></i> พอดีจอ</button>
+                <button class="lb-btn close-btn" onclick="window.closeVisualZoom()" title="ปิดภาพขยาย (ESC)"><i class="fa-solid fa-xmark"></i> ปิด (ESC)</button>
+            </div>
+        </div>
+        <div class="lightbox-viewport" id="lightboxViewport" onmousedown="window.startLightboxPan(event)" onmousemove="window.doLightboxPan(event)" onmouseup="window.endLightboxPan()" onmouseleave="window.endLightboxPan()">
+            <img src="" alt="ภาพขยาย" id="lightboxImage" class="lightbox-image-target">
+        </div>
+        <div class="lightbox-bottom-hints">
+            <span><i class="fa-regular fa-keyboard"></i> กดปุ่ม ESC เพื่อปิด</span>
+            <span><i class="fa-solid fa-computer-mouse"></i> เลื่อนลูกกลิ้งเมาส์เพื่อซูม</span>
+            <span><i class="fa-solid fa-hand"></i> คลิกค้างเพื่อเลื่อนภาพ (Pan)</span>
+        </div>
+    </div>
+
+    <!-- UNIVERSAL IMAGE URL IMPORT MODAL (Part 21.2) -->
+    <div class="image-import-modal" id="imageImportModal" onclick="window.handleModalBackdropClick(event, 'imageImportModal')">
+        <div class="image-import-dialog">
+            <div class="dialog-header">
+                <h3><i class="fa-solid fa-cloud-arrow-up"></i> Universal Image URL Import &amp; Asset Manager</h3>
+                <button class="dialog-close-btn" onclick="window.closeImageImportModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label>URL ของรูปภาพ (HTTPS Image URL):</label>
+                    <input type="url" id="importImageUrl" placeholder="https://example.com/image.jpg" class="form-input-sm" oninput="window.previewImportImage(this.value)">
+                </div>
+                <div class="import-preview-box" id="importPreviewBox">
+                    <span style="font-size:14px; color:#94A3B8;"><i class="fa-regular fa-image"></i> วาง URL เพื่อดูภาพตัวอย่าง</span>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                    <div class="form-group">
+                        <label>เลือกสไลด์เป้าหมาย:</label>
+                        <select id="importTargetSlide" class="form-input-sm">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>คำบรรยายภาพ (Caption):</label>
+                        <input type="text" id="importCaption" placeholder="ระบุคำบรรยายใต้ภาพ" class="form-input-sm">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>คำอธิบายเพื่อการเข้าถึง (Alt Text):</label>
+                    <input type="text" id="importAltText" placeholder="คำอธิบายภาพสำหรับโปรแกรมอ่านจอ" class="form-input-sm">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="tool-btn" onclick="window.closeImageImportModal()">ยกเลิก</button>
+                <button class="tool-btn primary-tool" onclick="window.applyImportedImage()"><i class="fa-solid fa-check"></i> บันทึกและนำไปใช้</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEACHER KEYBOARD SHORTCUTS MODAL -->
+    <div class="shortcuts-modal" id="shortcutsModal" onclick="window.handleModalBackdropClick(event, 'shortcutsModal')">
+        <div class="modal-content-card" style="width: 740px;">
+            <div class="dialog-header">
+                <h3><i class="fa-solid fa-keyboard"></i> คู่มือปุ่มลัดและแผงควบคุมสำหรับครูผู้สอน (Teacher Shortcuts)</h3>
+                <button class="dialog-close-btn" onclick="window.toggleShortcutsModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div style="padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;">
+                <div class="shortcuts-grid">
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>→</kbd> หรือ <kbd>Space</kbd></div>
+                        <span>ไปยังสไลด์ถัดไป (Next Slide)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>←</kbd></div>
+                        <span>ย้อนกลับสไลด์ก่อนหน้า (Previous Slide)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>Home</kbd> / <kbd>End</kbd></div>
+                        <span>ไปยังสไลด์แรกสุด / สไลด์สุดท้าย</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>T</kbd></div>
+                        <span>เปิดสารบัญสไลด์ทั้ง 32 หน้า (TOC Overview)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>G</kbd></div>
+                        <span>เปิดคลังคำศัพท์วิชาชีพ (E-Commerce Glossary)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>N</kbd></div>
+                        <span>เปิดแถบบันทึกผู้สอน &amp; สคริปต์บรรยาย (Teacher Notes)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>P</kbd></div>
+                        <span>เปิดจอผู้สอนซิงค์ 2 หน้าจอ (Presenter Mode)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>I</kbd></div>
+                        <span>เปิดเครื่องมือนำเข้าภาพประกอบผ่าน URL (Asset Manager)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>F</kbd></div>
+                        <span>สลับโหมดการแสดงผลเต็มหน้าจอ (Fullscreen)</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="key-combo"><kbd>?</kbd></div>
+                        <span>เปิดคู่มือปุ่มลัดนี้ (Help Dialog)</span>
+                    </div>
+                    <div class="shortcut-card" style="grid-column: span 2;">
+                        <div class="key-combo"><kbd>ESC</kbd></div>
+                        <span>ปิดหน้าต่างขยายภาพ (Lightbox Zoom) หรือปิดหน้าต่างป็อปอัปทุกตัว</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script dependencies -->
+    <script src="slides-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

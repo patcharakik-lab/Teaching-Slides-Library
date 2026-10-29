@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none">
+  <rect width="400" height="225" rx="14" fill="#F8FAFF" stroke="#4778F5" stroke-width="2"/>
+  <rect x="20" y="20" width="130" height="26" rx="8" fill="#4778F5"/>
+  <text x="85" y="38" text-anchor="middle" font-family="Inter, Prompt, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">21910-2016 • สัปดาห์ที่ 2</text>
+  <text x="20" y="78" font-family="Prompt, sans-serif" font-size="18" font-weight="700" fill="#18243D">การทำงานของเว็บไซต์</text>
+  <text x="20" y="104" font-family="Prompt, sans-serif" font-size="18" font-weight="700" fill="#4778F5">&amp; การวิเคราะห์เว็บไซต์ธุรกิจ</text>
+  <text x="20" y="136" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">หน่วยที่ 1 ความรู้พื้นฐานเกี่ยวกับเว็บไซต์และธุรกิจดิจิทัล</text>
+  <rect x="20" y="162" width="360" height="42" rx="10" fill="#DDEBFF"/>
+  <text x="200" y="188" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13" font-weight="700" fill="#1E40AF">28 Interactive Slides • 4 ชั่วโมง (ทฤษฎี 2 ชม. / ปฏิบัติ 2 ชม.)</text>
+</svg>

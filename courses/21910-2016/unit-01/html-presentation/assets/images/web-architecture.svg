@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" fill="none">
+  <rect width="800" height="460" rx="20" fill="#0F172A"/>
+  <!-- Connection pipes -->
+  <path d="M230 190 H570" stroke="#22D3EE" stroke-width="4" stroke-dasharray="10 6"/>
+  <path d="M570 270 H230" stroke="#10B981" stroke-width="4" stroke-dasharray="10 6"/>
+
+  <!-- Request Badge -->
+  <rect x="310" y="152" width="180" height="32" rx="16" fill="#0E7490" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="400" y="173" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="14" font-weight="700">1. Request (ส่งคำขอ) →</text>
+
+  <!-- Response Badge -->
+  <rect x="300" y="282" width="200" height="32" rx="16" fill="#047857" stroke="#34D399" stroke-width="1.5"/>
+  <text x="400" y="303" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="14" font-weight="700">← 2. Response (ส่งข้อมูลกลับ)</text>
+
+  <!-- Client / Browser Box -->
+  <rect x="40" y="95" width="210" height="270" rx="18" fill="#1E293B" stroke="#38BDF8" stroke-width="2.5"/>
+  <rect x="65" y="125" width="160" height="105" rx="10" fill="#0F172A" stroke="#38BDF8"/>
+  <rect x="65" y="125" width="160" height="22" rx="6" fill="#334155"/>
+  <circle cx="77" cy="136" r="4" fill="#F43F5E"/>
+  <circle cx="89" cy="136" r="4" fill="#F59E0B"/>
+  <circle cx="101" cy="136" r="4" fill="#10B981"/>
+  <text x="145" y="185" text-anchor="middle" fill="#38BDF8" font-family="Prompt, sans-serif" font-size="16" font-weight="700">Web Browser</text>
+  <text x="145" y="208" text-anchor="middle" fill="#94A3B8" font-family="Prompt, sans-serif" font-size="12">Chrome / Edge / Safari</text>
+  <text x="145" y="268" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="18" font-weight="700">ฝั่งผู้ใช้งาน (Client)</text>
+  <text x="145" y="295" text-anchor="middle" fill="#CBD5E1" font-family="Prompt, sans-serif" font-size="13">พิมพ์ URL / คลิกดูสินค้า</text>
+  <text x="145" y="316" text-anchor="middle" fill="#22D3EE" font-family="Prompt, sans-serif" font-size="13">แสดงผลหน้าเว็บเพจ</text>
+
+  <!-- Server / Hosting Box -->
+  <rect x="550" y="95" width="210" height="270" rx="18" fill="#1E293B" stroke="#8B5CF6" stroke-width="2.5"/>
+  <!-- Server Racks -->
+  <rect x="580" y="125" width="150" height="32" rx="6" fill="#0F172A" stroke="#8B5CF6"/>
+  <circle cx="600" cy="141" r="5" fill="#10B981"/>
+  <circle cx="616" cy="141" r="5" fill="#22D3EE"/>
+  <rect x="640" y="138" width="70" height="6" rx="3" fill="#475569"/>
+
+  <rect x="580" y="165" width="150" height="32" rx="6" fill="#0F172A" stroke="#8B5CF6"/>
+  <circle cx="600" cy="181" r="5" fill="#10B981"/>
+  <circle cx="616" cy="181" r="5" fill="#22D3EE"/>
+  <rect x="640" y="178" width="70" height="6" rx="3" fill="#475569"/>
+
+  <rect x="580" y="205" width="150" height="32" rx="6" fill="#0F172A" stroke="#8B5CF6"/>
+  <circle cx="600" cy="221" r="5" fill="#10B981"/>
+  <circle cx="616" cy="221" r="5" fill="#F59E0B"/>
+  <rect x="640" y="218" width="70" height="6" rx="3" fill="#475569"/>
+
+  <text x="655" y="268" text-anchor="middle" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="18" font-weight="700">เว็บเซิร์ฟเวอร์ (Server)</text>
+  <text x="655" y="295" text-anchor="middle" fill="#CBD5E1" font-family="Prompt, sans-serif" font-size="13">ประมวลผลคำขอ &amp; ค้นหาไฟล์</text>
+  <text x="655" y="316" text-anchor="middle" fill="#C4B5FD" font-family="Prompt, sans-serif" font-size="13">ส่ง HTML / รูปภาพ / ข้อมูลกลับ</text>
+
+  <!-- HTTPS Security Shield in Center -->
+  <circle cx="400" cy="230" r="34" fill="#1E1B4B" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="400" y="226" text-anchor="middle" fill="#FBBF24" font-family="Prompt, sans-serif" font-size="13" font-weight="700">HTTPS</text>
+  <text x="400" y="244" text-anchor="middle" fill="#FDE68A" font-family="Prompt, sans-serif" font-size="11">TLS Encrypted</text>
+</svg>

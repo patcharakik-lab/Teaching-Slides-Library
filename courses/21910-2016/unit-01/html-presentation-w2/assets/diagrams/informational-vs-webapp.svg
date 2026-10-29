@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" fill="none">
+  <rect width="860" height="440" rx="24" fill="#F8FAFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="430" y="38" text-anchor="middle" font-family="Prompt, sans-serif" font-size="20" font-weight="700" fill="#18243D">เปรียบเทียบ: เว็บไซต์แบบข้อมูล (Informational) vs เว็บแอปพลิเคชัน (Web Application)</text>
+
+  <!-- Left: Informational Website -->
+  <g transform="translate(32, 62)">
+    <rect width="380" height="350" rx="18" fill="#FFFFFF" stroke="#4778F5" stroke-width="2.5"/>
+    <rect x="0" y="0" width="380" height="48" rx="18" fill="#4778F5"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Prompt, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">1. เว็บไซต์แบบข้อมูล (Informational Website)</text>
+
+    <!-- Mockup Screen -->
+    <rect x="20" y="64" width="340" height="190" rx="12" fill="#F8FAFF" stroke="#93C5FD" stroke-width="1.5"/>
+    <rect x="32" y="76" width="316" height="28" rx="6" fill="#DDEBFF"/>
+    <text x="44" y="95" font-family="Prompt, sans-serif" font-size="12" font-weight="700" fill="#1E40AF">☕ ร้านกาแฟแพร่ • หน้าแรก | เมนู | เกี่ยวกับร้าน | ติดต่อเรา</text>
+
+    <rect x="32" y="114" width="148" height="126" rx="8" fill="#FFFFFF" stroke="#DBEAFE"/>
+    <text x="106" y="142" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13" font-weight="700" fill="#18243D">ประวัติร้าน &amp; เวลาเปิด</text>
+    <text x="106" y="166" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">เปิดทุกวัน 08:00 - 17:00 น.</text>
+    <text x="106" y="188" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">อ.เมือง จ.แพร่</text>
+    <text x="106" y="212" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" font-weight="700" fill="#4778F5">โทร: 054-XXX-XXX</text>
+
+    <rect x="192" y="114" width="156" height="126" rx="8" fill="#FFFFFF" stroke="#DBEAFE"/>
+    <text x="270" y="142" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13" font-weight="700" fill="#18243D">รายการเมนูเครื่องดื่ม</text>
+    <text x="270" y="166" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">• เอสเพรสโซ่เย็น 45 บาท</text>
+    <text x="270" y="188" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">• คาปูชิโน่ร้อน 45 บาท</text>
+    <text x="270" y="212" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">• ชาเขียวลาเต้ 50 บาท</text>
+
+    <rect x="20" y="268" width="340" height="66" rx="10" fill="#EFF6FF"/>
+    <text x="190" y="294" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13.5" font-weight="700" fill="#1E40AF">เน้นนำเสนอข้อมูลให้อ่านชัดเจน ใช้งานง่าย</text>
+    <text x="190" y="318" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12.5" fill="#475569">ไม่ต้องมีระบบสั่งซื้อหรือประมวลผลฐานข้อมูลที่ซับซ้อน</text>
+  </g>
+
+  <!-- Right: Web Application -->
+  <g transform="translate(448, 62)">
+    <rect width="380" height="350" rx="18" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="2.5"/>
+    <rect x="0" y="0" width="380" height="48" rx="18" fill="#8B5CF6"/>
+    <text x="190" y="30" text-anchor="middle" font-family="Prompt, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">2. เว็บแอปพลิเคชัน (Web Application)</text>
+
+    <!-- Mockup Screen -->
+    <rect x="20" y="64" width="340" height="190" rx="12" fill="#F8FAFF" stroke="#C4B5FD" stroke-width="1.5"/>
+    <rect x="32" y="76" width="316" height="28" rx="6" fill="#EDE5FF"/>
+    <text x="44" y="95" font-family="Prompt, sans-serif" font-size="12" font-weight="700" fill="#5B21B6">🛒 ระบบสั่งกาแฟออนไลน์ • สมาชิก: สมชาย | ตะกร้า (2)</text>
+
+    <rect x="32" y="114" width="194" height="126" rx="8" fill="#FFFFFF" stroke="#DDD6FE"/>
+    <text x="44" y="138" font-family="Prompt, sans-serif" font-size="13" font-weight="700" fill="#18243D">เลือกเมนู: ลาเต้เย็น (55 ฿)</text>
+    <text x="44" y="160" font-family="Prompt, sans-serif" font-size="12" fill="#52627D">เลือกระดับความหวาน:</text>
+    <rect x="44" y="168" width="48" height="22" rx="6" fill="#F1F5F9"/>
+    <text x="68" y="183" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">25%</text>
+    <rect x="98" y="168" width="54" height="22" rx="6" fill="#8B5CF6"/>
+    <text x="125" y="183" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">50% ✓</text>
+    <rect x="158" y="168" width="52" height="22" rx="6" fill="#F1F5F9"/>
+    <text x="184" y="183" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">100%</text>
+    <rect x="44" y="198" width="168" height="28" rx="8" fill="#10B981"/>
+    <text x="128" y="217" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">+ เพิ่มลงตะกร้า &amp; สั่งซื้อ</text>
+
+    <rect x="236" y="114" width="112" height="126" rx="8" fill="#18243D"/>
+    <text x="292" y="142" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12.5" font-weight="700" fill="#38BDF8">🗄️ ระบบเบื้องหลัง</text>
+    <text x="292" y="166" text-anchor="middle" font-family="Prompt, sans-serif" font-size="11.5" fill="#E2E8F0">• ระบบสมาชิก</text>
+    <text x="292" y="186" text-anchor="middle" font-family="Prompt, sans-serif" font-size="11.5" fill="#E2E8F0">• คำนวณยอดเงิน</text>
+    <text x="292" y="206" text-anchor="middle" font-family="Prompt, sans-serif" font-size="11.5" fill="#E2E8F0">• บันทึกฐานข้อมูล</text>
+
+    <rect x="20" y="268" width="340" height="66" rx="10" fill="#F5F3FF"/>
+    <text x="190" y="294" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13.5" font-weight="700" fill="#5B21B6">ผู้ใช้ทำกิจกรรมและโต้ตอบผ่านระบบได้จริง</text>
+    <text x="190" y="318" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12.5" fill="#475569">มีการรับข้อมูล ประมวลผล เชื่อมต่อฐานข้อมูลและระบบสั่งซื้อ</text>
+  </g>
+</svg>

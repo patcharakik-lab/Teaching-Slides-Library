@@ -1,0 +1,42 @@
+{
+  "courseId": "21910-1004",
+  "courseName": "พาณิชย์อิเล็กทรอนิกส์เบื้องต้น",
+  "status": "พร้อมใช้งาน",
+  "description": "หลักสูตร ปวช. สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล — ความรู้พื้นฐานเกี่ยวกับพาณิชย์อิเล็กทรอนิกส์และแพลตฟอร์มการค้าออนไลน์",
+  "units": [
+    {
+      "unitId": "unit-01",
+      "unitNumber": 1,
+      "title": "ความรู้พื้นฐานและประเภทของพาณิชย์อิเล็กทรอนิกส์",
+      "status": "พร้อมใช้งาน",
+      "slideCount": 32,
+      "presentations": [
+        {
+          "id": "21910-1004-u01-html",
+          "title": "สไลด์สื่อการสอน HTML Interactive (ความรู้พื้นฐานและประเภทของพาณิชย์อิเล็กทรอนิกส์)",
+          "presentationType": "html-interactive",
+          "slideCount": 32,
+          "entryPoint": "courses/21910-1004/unit-01/html-presentation/index.html",
+          "features": ["Interactive Quiz", "Interactive Glossary", "Before/After Slider", "Interactive Diagram", "Speaker Notes", "Presentation Timer", "PDF Export"]
+        }
+      ]
+    },
+    {
+      "unitId": "unit-02",
+      "unitNumber": 2,
+      "title": "กระบวนการซื้อขายและการทำธุรกรรมออนไลน์",
+      "status": "พร้อมใช้งาน",
+      "slideCount": 32,
+      "presentations": [
+        {
+          "id": "21910-1004-u02-html",
+          "title": "สไลด์สื่อการสอน HTML Interactive (กระบวนการซื้อขายและการทำธุรกรรมออนไลน์)",
+          "presentationType": "html-interactive",
+          "slideCount": 32,
+          "entryPoint": "courses/21910-1004/unit-02/html-presentation/index.html",
+          "features": ["Universal Visual Zoom & Lightbox", "Interactive Buying Journey", "Shopping Cart Calculator", "OMS State Explorer", "Payment Gateway Simulation", "Interactive Quiz 10 ข้อ", "Speaker Notes"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" fill="none">
+  <rect width="860" height="440" rx="24" fill="#F8FAFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="430" y="38" text-anchor="middle" font-family="Prompt, sans-serif" font-size="20" font-weight="700" fill="#18243D">เปรียบเทียบการแสดงผลบนโทรศัพท์มือถือ (Mobile-Friendly vs ไม่รองรับมือถือ)</text>
+
+  <!-- Left: Good Mobile-Friendly -->
+  <g transform="translate(50, 60)">
+    <rect width="350" height="354" rx="20" fill="#FFFFFF" stroke="#10B981" stroke-width="2.5"/>
+    <rect width="350" height="44" rx="20" fill="#10B981"/>
+    <text x="175" y="29" text-anchor="middle" font-family="Prompt, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">✓ เว็บไซต์ที่รองรับมือถือ (Mobile-Friendly)</text>
+
+    <!-- Phone Frame -->
+    <rect x="85" y="58" width="180" height="226" rx="22" fill="#18243D"/>
+    <rect x="93" y="72" width="164" height="198" rx="14" fill="#FFFFFF"/>
+    <rect x="101" y="80" width="148" height="26" rx="6" fill="#DDEBFF"/>
+    <text x="175" y="97" text-anchor="middle" font-family="Prompt, sans-serif" font-size="11.5" font-weight="700" fill="#1E40AF">☕ บ้านกาแฟแพร่</text>
+
+    <rect x="101" y="114" width="148" height="64" rx="8" fill="#F8FAFF" stroke="#BFDBFE"/>
+    <text x="175" y="138" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12" font-weight="700" fill="#18243D">อเมริกาโน่น้ำผึ้ง 50 ฿</text>
+    <text x="175" y="158" text-anchor="middle" font-family="Prompt, sans-serif" font-size="11" fill="#52627D">รูปพอดีจอ ข้อความอ่านง่าย</text>
+
+    <rect x="101" y="188" width="148" height="34" rx="8" fill="#10B981"/>
+    <text x="175" y="210" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">กดสั่งซื้อสะดวก</text>
+
+    <rect x="101" y="230" width="148" height="30" rx="8" fill="#EDE5FF"/>
+    <text x="175" y="249" text-anchor="middle" font-family="Prompt, sans-serif" font-size="11.5" font-weight="700" fill="#5B21B6">📞 โทรติดต่อร้าน</text>
+
+    <text x="175" y="308" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13.5" font-weight="700" fill="#065F46">ข้อความอ่านง่าย รูปพอดีจอ ปุ่มกดสะดวก</text>
+    <text x="175" y="330" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12.5" fill="#475569">ไม่ต้องเลื่อนหน้าจอในแนวนอน</text>
+  </g>
+
+  <!-- Right: Bad Non-Mobile-Friendly -->
+  <g transform="translate(460, 60)">
+    <rect width="350" height="354" rx="20" fill="#FFFFFF" stroke="#EF4444" stroke-width="2.5"/>
+    <rect width="350" height="44" rx="20" fill="#EF4444"/>
+    <text x="175" y="29" text-anchor="middle" font-family="Prompt, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">✗ เว็บไซต์ที่ไม่เหมาะกับมือถือ</text>
+
+    <!-- Phone Frame with Overflowing Elements -->
+    <rect x="85" y="58" width="180" height="226" rx="22" fill="#18243D"/>
+    <rect x="93" y="72" width="164" height="198" rx="14" fill="#FFFFFF"/>
+
+    <!-- Overflowing Banner -->
+    <rect x="99" y="80" width="218" height="24" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-dasharray="4 3"/>
+    <text x="105" y="96" font-family="Prompt, sans-serif" font-size="9" fill="#991B1B">หน้าแรก | เมนูเครื่องดื่ม | โปรโมชัน | แผนที่ร้าน | ติดต่อเรา (ล้นขอบจอ!)</text>
+
+    <!-- Overflowing Image Box -->
+    <rect x="99" y="112" width="210" height="72" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5"/>
+    <text x="175" y="142" text-anchor="middle" font-family="Prompt, sans-serif" font-size="9" fill="#7F1D1D">ตัวอักษรเล็กมาก ต้องซูมเข้าออกตลอดเวลา</text>
+    <text x="175" y="160" text-anchor="middle" font-family="Prompt, sans-serif" font-size="9" fill="#EF4444">รูปภาพกว้างเกินหน้าจอมือถือ ➔</text>
+
+    <!-- Tiny Unclickable Buttons -->
+    <rect x="102" y="196" width="46" height="14" rx="3" fill="#94A3B8"/>
+    <text x="125" y="206" text-anchor="middle" font-family="Prompt, sans-serif" font-size="7.5" fill="#FFFFFF">ปุ่มเล็กกดยาก</text>
+    <rect x="152" y="196" width="46" height="14" rx="3" fill="#94A3B8"/>
+    <text x="175" y="206" text-anchor="middle" font-family="Prompt, sans-serif" font-size="7.5" fill="#FFFFFF">สั่งซื้อ</text>
+
+    <!-- Horizontal Scrollbar Warning -->
+    <rect x="99" y="246" width="152" height="14" rx="7" fill="#FEE2E2"/>
+    <rect x="102" y="248" width="76" height="10" rx="5" fill="#EF4444"/>
+    <text x="175" y="238" text-anchor="middle" font-family="Prompt, sans-serif" font-size="10.5" font-weight="700" fill="#DC2626">⚠ ต้องเลื่อนหน้าจอแนวนอน</text>
+
+    <text x="175" y="308" text-anchor="middle" font-family="Prompt, sans-serif" font-size="13.5" font-weight="700" fill="#991B1B">ตัวอักษรเล็ก องค์ประกอบล้นหน้าจอ</text>
+    <text x="175" y="330" text-anchor="middle" font-family="Prompt, sans-serif" font-size="12.5" fill="#475569">ปุ่มชิดกันเกินไป กดยากและใช้งานลำบาก</text>
+  </g>
+</svg>

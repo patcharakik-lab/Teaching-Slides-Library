@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="800" y2="540" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B1026"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="purpleGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Mesh -->
+  <rect width="800" height="540" rx="24" fill="url(#bgGrad)"/>
+  <circle cx="680" cy="100" r="140" fill="#8B5CF6" opacity="0.22"/>
+  <circle cx="120" cy="440" r="160" fill="#22D3EE" opacity="0.15"/>
+
+  <!-- Isometric Grid Lines -->
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="160" y1="0" x2="160" y2="540"/>
+    <line x1="320" y1="0" x2="320" y2="540"/>
+    <line x1="480" y1="0" x2="480" y2="540"/>
+    <line x1="640" y1="0" x2="640" y2="540"/>
+  </g>
+
+  <!-- Main Browser Window Mockup -->
+  <rect x="70" y="55" width="520" height="350" rx="16" fill="#0F172A" stroke="#38BDF8" stroke-width="2" stroke-opacity="0.5"/>
+  <rect x="70" y="55" width="520" height="44" rx="16" fill="#1E293B"/>
+  <!-- Traffic dots -->
+  <circle cx="96" cy="77" r="6" fill="#F43F5E"/>
+  <circle cx="116" cy="77" r="6" fill="#F59E0B"/>
+  <circle cx="136" cy="77" r="6" fill="#10B981"/>
+  <!-- Address bar -->
+  <rect x="165" y="65" width="340" height="24" rx="12" fill="#0F172A" stroke="#334155"/>
+  <text x="185" y="81" fill="#22D3EE" font-family="Inter, sans-serif" font-size="12" font-weight="600">🔒 https://www.thai-digitalshop.com</text>
+
+  <!-- Hero Banner Inside Browser -->
+  <rect x="92" y="116" width="476" height="120" rx="12" fill="url(#cyanGlow)" opacity="0.9"/>
+  <text x="116" y="158" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="22" font-weight="700">หน้าร้านธุรกิจดิจิทัล 24 ชั่วโมง</text>
+  <text x="116" y="186" fill="#E0F2FE" font-family="Prompt, sans-serif" font-size="14">เชื่อมต่อลูกค้าทั่วโลกด้วยเว็บไซต์ที่ทันสมัย ปลอดภัย และใช้งานง่าย</text>
+  <rect x="116" y="200" width="120" height="26" rx="13" fill="#0B1026"/>
+  <text x="142" y="217" fill="#22D3EE" font-family="Prompt, sans-serif" font-size="12" font-weight="700">สั่งซื้อสินค้า →</text>
+
+  <!-- Product Cards Inside Browser -->
+  <rect x="92" y="252" width="148" height="132" rx="10" fill="#1E293B" stroke="#334155"/>
+  <rect x="104" y="264" width="124" height="64" rx="6" fill="#2563EB" opacity="0.35"/>
+  <text x="104" y="348" fill="#F8FAFC" font-family="Prompt, sans-serif" font-size="13" font-weight="600">สินค้าขายดี #1</text>
+  <text x="104" y="368" fill="#22D3EE" font-family="Prompt, sans-serif" font-size="12" font-weight="700">฿ 290.-</text>
+
+  <rect x="256" y="252" width="148" height="132" rx="10" fill="#1E293B" stroke="#334155"/>
+  <rect x="268" y="264" width="124" height="64" rx="6" fill="#8B5CF6" opacity="0.35"/>
+  <text x="268" y="348" fill="#F8FAFC" font-family="Prompt, sans-serif" font-size="13" font-weight="600">โปรโมชันพิเศษ</text>
+  <text x="268" y="368" fill="#A78BFA" font-family="Prompt, sans-serif" font-size="12" font-weight="700">฿ 450.-</text>
+
+  <rect x="420" y="252" width="148" height="132" rx="10" fill="#1E293B" stroke="#334155"/>
+  <rect x="432" y="264" width="124" height="64" rx="6" fill="#10B981" opacity="0.35"/>
+  <text x="432" y="348" fill="#F8FAFC" font-family="Prompt, sans-serif" font-size="13" font-weight="600">บริการจัดส่งด่วน</text>
+  <text x="432" y="368" fill="#34D399" font-family="Prompt, sans-serif" font-size="12" font-weight="700">ฟรีค่าส่ง</text>
+
+  <!-- Floating Mobile Device Mockup -->
+  <rect x="540" y="170" width="195" height="325" rx="24" fill="#0F172A" stroke="#22D3EE" stroke-width="3"/>
+  <rect x="598" y="182" width="80" height="8" rx="4" fill="#334155"/>
+  <rect x="556" y="204" width="163" height="90" rx="10" fill="url(#purpleGlow)"/>
+  <text x="570" y="242" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="15" font-weight="700">Mobile Store</text>
+  <text x="570" y="264" fill="#FCE7F3" font-family="Prompt, sans-serif" font-size="11">รองรับสมาร์ตโฟน 100%</text>
+  <rect x="556" y="308" width="163" height="52" rx="8" fill="#1E293B"/>
+  <circle cx="582" cy="334" r="14" fill="#22D3EE" opacity="0.25"/>
+  <text x="606" y="331" fill="#F8FAFC" font-family="Prompt, sans-serif" font-size="12" font-weight="600">ชำระเงินปลอดภัย</text>
+  <text x="606" y="348" fill="#94A3B8" font-family="Prompt, sans-serif" font-size="11">HTTPS / TLS Encrypted</text>
+  <rect x="556" y="372" width="163" height="52" rx="8" fill="#1E293B"/>
+  <circle cx="582" cy="398" r="14" fill="#10B981" opacity="0.25"/>
+  <text x="606" y="395" fill="#F8FAFC" font-family="Prompt, sans-serif" font-size="12" font-weight="600">Cloud Web Hosting</text>
+  <text x="606" y="412" fill="#94A3B8" font-family="Prompt, sans-serif" font-size="11">ออนไลน์ 24 ชั่วโมง</text>
+  <rect x="556" y="438" width="163" height="34" rx="17" fill="#22D3EE"/>
+  <text x="600" y="460" fill="#0B1026" font-family="Prompt, sans-serif" font-size="13" font-weight="700">สั่งซื้อทันที</text>
+
+  <!-- Floating Cloud & Server Badge -->
+  <rect x="55" y="430" width="440" height="72" rx="16" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5"/>
+  <circle cx="100" cy="466" r="22" fill="#8B5CF6" opacity="0.25"/>
+  <text x="90" y="473" fill="#C4B5FD" font-family="Inter, sans-serif" font-size="18" font-weight="700">⚡</text>
+  <text x="136" y="460" fill="#FFFFFF" font-family="Prompt, sans-serif" font-size="16" font-weight="700">Web Architecture: Domain + Hosting + Server + HTTPS</text>
+  <text x="136" y="483" fill="#94A3B8" font-family="Prompt, sans-serif" font-size="13">พื้นฐานสำคัญสู่การเป็นนักพัฒนาเว็บไซต์ธุรกิจดิจิทัลมืออาชีพ</text>
+</svg>

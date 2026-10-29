@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21910-2016 การสร้างเว็บไซต์สำหรับธุรกิจดิจิทัล — หน่วยที่ 1 (สัปดาห์ที่ 2): การทำงานของเว็บไซต์และการวิเคราะห์เว็บไซต์ธุรกิจ</title>
+    <!-- Google Fonts: Prompt, Sarabun, Inter, Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Sarabun:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Top Control Bar (Hidden in Print/PDF & Audience View) -->
+    <header class="top-bar no-print" id="topBar" role="banner">
+        <div class="brand-info">
+            <span class="course-badge">
+                <img src="assets/images/web-globe.svg" alt="" class="brand-icon" width="22" height="22">
+                <span>21910-2016 การสร้างเว็บไซต์สำหรับธุรกิจดิจิทัล</span>
+            </span>
+            <span class="unit-title">หน่วยที่ 1 (สัปดาห์ที่ 2): การทำงานของเว็บไซต์และการวิเคราะห์เว็บไซต์ธุรกิจ (ปวช.2 • 4 ชั่วโมง)</span>
+        </div>
+        <div class="controls" role="toolbar" aria-label="เครื่องมือควบคุมการนำเสนอ">
+            <button id="btnGrid" class="ctrl-btn" title="สารบัญสไลด์ / จัดลำดับและภาพรวมทั้งหมด" aria-label="เปิดสารบัญสไลด์">
+                <i class="fa-solid fa-table-cells"></i> <span>สารบัญสไลด์</span>
+            </button>
+            <button id="btnVocab" class="ctrl-btn" title="คลังคำศัพท์เทคนิค (กด G)" aria-label="เปิดคลังคำศัพท์เทคนิค">
+                <i class="fa-solid fa-book-open-reader"></i> <span>คำศัพท์ (G)</span>
+            </button>
+            <button id="btnImageManager" class="ctrl-btn" title="เพิ่มภาพจาก URL / จัดการสื่อภาพประกอบสไลด์ (กด I)" aria-label="เปิดเครื่องมือเพิ่มภาพจาก URL">
+                <i class="fa-solid fa-image"></i> <span>เพิ่มภาพ URL (I)</span>
+            </button>
+            <button id="btnNotes" class="ctrl-btn" title="บันทึกคำอธิบายสำหรับครู (กด N)" aria-label="เปิดบันทึกคำอธิบายสำหรับครู">
+                <i class="fa-solid fa-chalkboard-user"></i> <span>โน้ตผู้สอน (N)</span>
+            </button>
+            <button id="btnPresenter" class="ctrl-btn accent" title="โหมดผู้สอน 2 หน้าจอ Presenter Mode (กด P)" aria-label="เปิดโหมดผู้สอน">
+                <i class="fa-solid fa-desktop"></i> <span>โหมดผู้สอน (P)</span>
+            </button>
+            <button id="btnPrint" class="ctrl-btn primary" title="บันทึกหรือพิมพ์เป็น PDF ทุกสไลด์ (16:9)" aria-label="บันทึกเป็น PDF">
+                <i class="fa-solid fa-file-pdf"></i> <span>Save as PDF</span>
+            </button>
+            <button id="btnFullscreen" class="ctrl-btn" title="โหมดเต็มหน้าจอ (กด F)" aria-label="สลับโหมดเต็มหน้าจอ">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. Main Presentation Stage (1600x900 16:9 Auto-Scaling Canvas) -->
+    <main class="stage-wrapper" id="stageWrapper" role="main">
+        <div class="slide-scale-wrapper" id="slideScaleWrapper">
+            <div class="slide-viewport" id="slideViewport" aria-live="polite">
+                <!-- Slides injected dynamically from slides-data.js -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 3. Bottom Navigation & Progress Bar (Hidden in Print/PDF & Audience View) -->
+    <footer class="bottom-bar no-print" id="bottomBar" role="contentinfo">
+        <div class="progress-track" aria-label="แถบความคืบหน้าการเรียน">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="nav-row">
+            <div class="slide-meta">
+                <span class="time-badge" id="slideTimerBadge"><i class="fa-regular fa-clock"></i> 00:00 | แผน 4 ชม.</span>
+                <span class="section-indicator" id="sectionIndicator">บทนำ</span>
+            </div>
+            <div class="nav-buttons">
+                <button id="btnFirst" class="nav-btn" title="สไลด์แรก (Home)" aria-label="สไลด์แรก">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button id="btnPrev" class="nav-btn" title="สไลด์ก่อนหน้า (←)" aria-label="สไลด์ก่อนหน้า">
+                    <i class="fa-solid fa-chevron-left"></i> ก่อนหน้า
+                </button>
+                <div class="slide-counter" aria-label="ตัวนับหมายเลขสไลด์">
+                    <input type="number" id="slideInput" min="1" max="28" value="1" aria-label="พิมพ์หมายเลขสไลด์เพื่อข้ามไป">
+                    <span>/ <strong id="totalSlidesCount">28</strong></span>
+                </div>
+                <button id="btnNext" class="nav-btn primary" title="สไลด์ถัดไป (→ / Space)" aria-label="สไลด์ถัดไป">
+                    ถัดไป <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button id="btnLast" class="nav-btn" title="สไลด์สุดท้าย (End)" aria-label="สไลด์สุดท้าย">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+            </div>
+            <div class="shortcut-hint" aria-hidden="true">
+                <span><kbd>←</kbd><kbd>→</kbd> เลื่อน</span>
+                <span><kbd>I</kbd> เพิ่มภาพ</span>
+                <span><kbd>G</kbd> คำศัพท์</span>
+                <span><kbd>N</kbd> โน้ตครู</span>
+                <span><kbd>P</kbd> ผู้สอน</span>
+                <span><kbd>F</kbd> เต็มจอ</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 4. Speaker Notes Drawer for Teacher (With Edit & Export, Hidden in Print & Audience View) -->
+    <aside class="notes-drawer no-print" id="notesDrawer" aria-label="บันทึกคำอธิบายสำหรับครู">
+        <div class="drawer-header">
+            <div>
+                <h3><i class="fa-solid fa-microphone-lines"></i> บันทึกคำอธิบายสำหรับครู (Speaker Notes)</h3>
+                <p id="notesTimeEstimate" class="notes-sub">เวลาแนะนำสำหรับสไลด์นี้: 5 นาที</p>
+            </div>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <button id="btnExportNotes" class="ctrl-btn" title="ส่งออกไฟล์บันทึกการสอนทั้งหมด (.json / .txt)" style="font-size:12px; padding:5px 10px;">
+                    <i class="fa-solid fa-download"></i> ส่งออกโน้ต
+                </button>
+                <button id="closeNotes" class="icon-close" aria-label="ปิดบันทึกสำหรับครู"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+        <div class="drawer-body" id="notesContent">
+            <!-- Populated dynamically by app.js -->
+        </div>
+    </aside>
+
+    <!-- 5. Slide Navigator / Table of Contents & Slide Organizer Modal (Hidden in Print) -->
+    <div class="modal-overlay no-print" id="gridModal" role="dialog" aria-modal="true" aria-labelledby="gridModalTitle">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 id="gridModalTitle"><i class="fa-solid fa-table-cells"></i> สารบัญสไลด์ &amp; ตัวจัดระเบียบสไลด์ (Table of Contents &amp; Slide Organizer)</h2>
+                    <p class="modal-sub">คลิกเลือกสไลด์เพื่อข้ามไปยังหัวข้อที่ต้องการ หรือกรองตามหมวดหมู่การเรียนรู้ (28 สไลด์ • 4 ชั่วโมง)</p>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <select id="tocSectionFilter" aria-label="กรองตามหมวดหมู่" style="padding:8px 12px; border-radius:10px; border:1.5px solid #CBD5E1; font-family:'Prompt',sans-serif; font-size:14px;">
+                        <option value="ALL">ทุกส่วนการเรียนรู้ (28 สไลด์)</option>
+                    </select>
+                    <button id="closeGrid" class="icon-close" aria-label="ปิดสารบัญสไลด์"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="grid-list" id="gridList">
+                <!-- Populated dynamically by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Interactive Glossary Modal (Hidden in Print) -->
+    <div class="modal-overlay no-print" id="vocabModal" role="dialog" aria-modal="true" aria-labelledby="vocabModalTitle">
+        <div class="modal-container vocab-container">
+            <div class="modal-header">
+                <div>
+                    <h2 id="vocabModalTitle"><i class="fa-solid fa-book-open-reader"></i> คลังคำศัพท์เทคนิคเว็บไซต์และธุรกิจดิจิทัล (Interactive Glossary)</h2>
+                    <p class="modal-sub">อธิบายด้วยภาษาธรรมชาติ เข้าใจง่าย พร้อมตัวอย่างการใช้งานจริงสำหรับนักเรียน ปวช.2</p>
+                </div>
+                <div class="vocab-search-wrap">
+                    <input type="search" id="vocabSearchInput" placeholder="ค้นหาคำศัพท์ เช่น Request, Response, DNS, HTTPS, TLS, Web App, CTA, Usability..." aria-label="ค้นหาคำศัพท์">
+                    <button id="closeVocab" class="icon-close" aria-label="ปิดคลังคำศัพท์"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="vocab-list" id="vocabList">
+                <!-- Populated dynamically by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Inline Glossary Quick Popup Card (Hidden in Print) -->
+    <div class="glossary-popover no-print" id="glossaryPopover" role="dialog" aria-hidden="true">
+        <div class="glossary-popover-header">
+            <span id="popoverTerm" class="popover-term">Term</span>
+            <button id="closePopover" class="popover-close" aria-label="ปิดคำอธิบายศัพท์"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="popoverBody" class="glossary-popover-body"></div>
+    </div>
+
+    <!-- 8. Presenter Mode Console (Teacher Console + Dual-Screen Audience View Sync) -->
+    <div class="modal-overlay presenter-overlay no-print" id="presenterModal" role="dialog" aria-modal="true" aria-labelledby="presenterModalTitle">
+        <div class="presenter-container">
+            <div class="presenter-topbar">
+                <div class="presenter-title-group">
+                    <h2 id="presenterModalTitle"><i class="fa-solid fa-chalkboard-user"></i> โหมดผู้สอน (Teacher Presenter Console)</h2>
+                    <span class="presenter-slide-badge" id="presenterSlideBadge">สไลด์ที่ 1 / 28</span>
+                    <span class="presenter-sync-badge" id="presenterSyncStatus"><i class="fa-solid fa-tower-broadcast"></i> ซิงค์หน้าจอพร้อมใช้งาน</span>
+                </div>
+                <div class="presenter-timer-bar">
+                    <div class="timer-display">
+                        <span class="timer-label">เวลาที่ใช้สอน:</span>
+                        <strong id="presenterElapsed">00:00</strong>
+                    </div>
+                    <button id="btnTimerToggle" class="ctrl-btn primary"><i class="fa-solid fa-play"></i> เริ่ม/พักเวลา</button>
+                    <button id="btnTimerReset" class="ctrl-btn"><i class="fa-solid fa-rotate-left"></i> รีเซ็ต</button>
+                    <button id="btnOpenAudienceWindow" class="ctrl-btn accent" title="เปิดหน้าต่างสำหรับผู้เรียนบนโปรเจกเตอร์ (Audience View — ไม่มีปุ่มควบคุมและไม่มี Speaker Notes)">
+                        <i class="fa-solid fa-tv"></i> เปิดจอโปรเจกเตอร์ (Audience View)
+                    </button>
+                    <button id="closePresenter" class="icon-close" aria-label="ปิดโหมดผู้สอน"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="presenter-grid">
+                <!-- Left Column: Current Slide + Next Slide Preview + Controls -->
+                <div class="presenter-left">
+                    <div class="presenter-card current-preview-card">
+                        <div class="presenter-card-head">
+                            <span><i class="fa-solid fa-tv"></i> สไลด์ปัจจุบัน (Current Slide)</span>
+                            <span id="presenterRecTime" class="rec-time-pill">เวลาแนะนำ: 5 นาที</span>
+                        </div>
+                        <div class="presenter-current-summary" id="presenterCurrentSummary"></div>
+                    </div>
+
+                    <div class="presenter-card next-preview-card">
+                        <div class="presenter-card-head">
+                            <span><i class="fa-solid fa-forward"></i> สไลด์ถัดไป (Next Slide Preview)</span>
+                        </div>
+                        <div class="presenter-next-summary" id="presenterNextSummary"></div>
+                    </div>
+
+                    <div class="presenter-nav-actions">
+                        <button id="presenterPrevBtn" class="nav-btn"><i class="fa-solid fa-chevron-left"></i> สไลด์ก่อนหน้า</button>
+                        <button id="presenterNextBtn" class="nav-btn primary">สไลด์ถัดไป <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Detailed Teacher Speaker Notes & Custom Teacher Note Editor -->
+                <div class="presenter-right">
+                    <div class="presenter-card notes-full-card">
+                        <div class="presenter-card-head">
+                            <span><i class="fa-solid fa-microphone-lines"></i> บทบรรยายสำหรับครู (Speaker Notes ครบ 7 องค์ประกอบ)</span>
+                            <button id="btnPresenterExportNotes" class="ctrl-btn" style="font-size:12px; padding:4px 10px;">
+                                <i class="fa-solid fa-file-export"></i> ส่งออกโน้ตทั้งหมด
+                            </button>
+                        </div>
+                        <div class="presenter-notes-scroll" id="presenterNotesBody"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. Universal Image URL Import & Visual Asset Management Modal (ADD-ON V11.2) -->
+    <div class="modal-overlay no-print" id="imageManagerModal" role="dialog" aria-modal="true" aria-labelledby="imageManagerTitle">
+        <div class="modal-container img-manager-container">
+            <div class="modal-header">
+                <div>
+                    <h2 id="imageManagerTitle"><i class="fa-solid fa-images"></i> เพิ่มภาพประกอบจาก URL &amp; จัดการสื่อภาพในสไลด์ (Visual Asset Management)</h2>
+                    <p class="modal-sub">รองรับ PNG, JPG, JPEG, WebP, GIF และ SVG ที่ปลอดภัย • รักษาสัดส่วนภาพอัตโนมัติ • รองรับการขยายดูรายละเอียดด้วย Universal Visual Zoom</p>
+                </div>
+                <div class="img-mgr-header-actions">
+                    <span id="assetStorageModeBadge" class="storage-mode-badge" title="สถานะการเชื่อมต่อระบบจัดเก็บไฟล์">
+                        <i class="fa-solid fa-hard-drive"></i> ตรวจสอบโหมดบันทึก...
+                    </span>
+                    <button id="btnExportCustomAssetsCode" class="ctrl-btn" title="ดาวน์โหลดไฟล์ custom-assets-data.js เพื่อนำไปอัปเดต Source Code ของโปรเจกต์">
+                        <i class="fa-solid fa-file-code"></i> Export โค้ดโปรเจกต์
+                    </button>
+                    <button id="closeImageManager" class="icon-close" aria-label="ปิดหน้าต่างจัดการภาพ"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="img-manager-body">
+                <!-- Left Column: Image URL Input, Validation, Placement & Metadata Form -->
+                <div class="img-form-col">
+                    <div class="img-form-header-bar">
+                        <span id="imgFormModeLabel" class="form-mode-pill"><i class="fa-solid fa-plus-circle"></i> เพิ่มภาพประกอบใหม่</span>
+                        <button type="button" id="btnResetAssetForm" class="ctrl-btn" style="padding:3px 10px; font-size:12px;">ล้างฟอร์ม</button>
+                    </div>
+
+                    <input type="hidden" id="editingAssetId" value="">
+
+                    <!-- 1. URL Input & Local Asset Upload -->
+                    <div class="form-section-box">
+                        <label class="form-label" for="imgUrlInput">1. วาง URL รูปภาพ (HTTPS) หรือพาธไฟล์ Local Asset (<code>assets/images/...</code>)</label>
+                        <div class="url-input-group">
+                            <input type="url" id="imgUrlInput" class="form-input" placeholder="วางลิงก์รูปภาพโดยตรง เช่น https://example.com/image.png หรือ assets/images/..." autocomplete="off">
+                            <button type="button" id="btnVerifyImgUrl" class="ctrl-btn primary">
+                                <i class="fa-solid fa-check-double"></i> ตรวจสอบ &amp; โหลดตัวอย่าง
+                            </button>
+                        </div>
+
+                        <!-- Quick Sample & Local File Upload Bar -->
+                        <div class="url-helper-bar">
+                            <label class="ctrl-btn file-upload-label" title="อัปโหลดไฟล์ภาพจากคอมพิวเตอร์เพื่อใช้แทน URL หรือเก็บใน assets/images/">
+                                <i class="fa-solid fa-upload"></i> เลือกไฟล์ภาพจากเครื่อง
+                                <input type="file" id="localAssetFileInput" accept=".png,.jpg,.jpeg,.webp,.gif,.svg,image/png,image/jpeg,image/webp,image/gif,image/svg+xml" style="display:none;">
+                            </label>
+                            <button type="button" id="btnImportUrlToLocalFolder" class="ctrl-btn" title="ดึงภาพจาก URL มาเก็บเป็นไฟล์จริงในโฟลเดอร์ assets/images/ (เฉพาะภาพที่มีสิทธิ์ใช้งานและเว็บไซต์ไม่บล็อก Hotlink)">
+                                <i class="fa-solid fa-folder-arrow-down"></i> นำเข้าสู่ <code>assets/images/</code>
+                            </button>
+                        </div>
+
+                        <!-- Honest Notice about Hotlink/CORS & External URLs -->
+                        <div class="hotlink-notice-text">
+                            <i class="fa-solid fa-circle-info"></i> <strong>คำแนะนำ:</strong> กรุณาวางลิงก์ไฟล์รูปภาพโดยตรง (คลิกขวาที่ภาพบนเว็บ ➔ <em>คัดลอกที่อยู่รูปภาพ / Copy image address</em>) บางเว็บไซต์อาจมีการป้องกัน Hotlink หรือจำกัด CORS ซึ่งต้องใช้วิธีอัปโหลดไฟล์จากเครื่องหรือนำเข้าสู่ <code>assets/images/</code> แทน
+                        </div>
+
+                        <!-- Dynamic Validation Alert Box -->
+                        <div id="imgUrlStatusBox" class="url-status-box info" role="status" aria-live="polite">
+                            <i class="fa-solid fa-link"></i> วาง URL รูปภาพแล้วกด <strong>"ตรวจสอบ &amp; โหลดตัวอย่าง"</strong> เพื่อตรวจสอบว่าเบราว์เซอร์โหลดภาพได้จริงก่อนบันทึก
+                        </div>
+                    </div>
+
+                    <!-- 2. Target Slide, Layout, Position & Size -->
+                    <div class="form-section-box">
+                        <div class="form-label">2. เลือกสไลด์ปลายทาง รูปแบบการจัดวาง (Layout) และขนาด</div>
+                        <div class="form-grid-2">
+                            <div>
+                                <label class="sub-label" for="imgTargetSlideSelect">สไลด์ปลายทาง (Target Slide)</label>
+                                <select id="imgTargetSlideSelect" class="form-select"></select>
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgLayoutSelect">รูปแบบการจัดวาง (Image Layout)</label>
+                                <select id="imgLayoutSelect" class="form-select">
+                                    <option value="side-by-side">Side-by-Side Image &amp; Text (ภาพเคียงคู่เนื้อหา)</option>
+                                    <option value="card">Image Card (การ์ดรูปภาพพร้อมคำอธิบาย)</option>
+                                    <option value="full-width">Full Width Image (ภาพกว้างเต็มพื้นที่)</option>
+                                    <option value="diagram">Diagram Image (แผนภาพเทคนิคขยายดูรายละเอียด)</option>
+                                    <option value="annotated">Annotated Image (ภาพพร้อมป้ายชี้จุดสำคัญ)</option>
+                                    <option value="comparison">Comparison Images (ภาพเปรียบเทียบ 2 ภาพ)</option>
+                                    <option value="gallery">Image Gallery (แกลเลอรีหลายภาพในสไลด์)</option>
+                                    <option value="background">Background Illustration (ภาพพื้นหลังโปร่งแสงไม่ทับข้อความ)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgPositionSelect">ตำแหน่งภาพในสไลด์ (Position)</label>
+                                <select id="imgPositionSelect" class="form-select">
+                                    <option value="right">ด้านขวาของเนื้อหา (Right Split)</option>
+                                    <option value="left">ด้านซ้ายของเนื้อหา (Left Split)</option>
+                                    <option value="bottom">ด้านล่างเนื้อหา (Bottom Dock)</option>
+                                    <option value="top">ด้านบนเนื้อหา (Top Banner)</option>
+                                    <option value="replace-visual">แทนที่โซนภาพเดิมของสไลด์ (Replace Visual Slot)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgSizeSelect">ขนาดพื้นที่แสดงภาพ (Size &amp; Ratio)</label>
+                                <select id="imgSizeSelect" class="form-select">
+                                    <option value="auto-fit">สมดุลอัตโนมัติ ไม่ล้นกรอบ 16:9 (Auto-Fit แนะนำ)</option>
+                                    <option value="small">กะทัดรัด (Small ~30%)</option>
+                                    <option value="medium">มาตรฐาน (Medium ~40%)</option>
+                                    <option value="large">ใหญ่ชัดเจน (Large ~50%)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Conditional Fields: Annotated Image -->
+                        <div id="annotatedExtraGroup" class="conditional-field-group" style="display:none;">
+                            <div class="form-grid-2" style="margin-top:8px;">
+                                <div>
+                                    <label class="sub-label" for="imgAnnotationBadgeInput">ข้อความป้ายชี้จุด (Annotation Callout)</label>
+                                    <input type="text" id="imgAnnotationBadgeInput" class="form-input" placeholder="เช่น จุดสังเกต: ปุ่ม CTA เด่นชัดมุมขวาบน">
+                                </div>
+                                <div>
+                                    <label class="sub-label" for="imgAnnotationPosSelect">ตำแหน่งป้ายกำกับบนภาพ</label>
+                                    <select id="imgAnnotationPosSelect" class="form-select">
+                                        <option value="top-left">มุมบนซ้าย (Top-Left)</option>
+                                        <option value="top-right">มุมบนขวา (Top-Right)</option>
+                                        <option value="bottom-left">มุมล่างซ้าย (Bottom-Left)</option>
+                                        <option value="bottom-right">มุมล่างขวา (Bottom-Right)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conditional Fields: Comparison Images -->
+                        <div id="comparisonExtraGroup" class="conditional-field-group" style="display:none;">
+                            <div style="margin-top:8px;">
+                                <label class="sub-label" for="imgCompareSecondUrlInput">URL รูปภาพที่ 2 สำหรับเปรียบเทียบ (Comparison Image #2)</label>
+                                <input type="url" id="imgCompareSecondUrlInput" class="form-input" placeholder="วาง URL รูปภาพที่ 2 เช่น assets/images/ref-mobile-friendly-bad.png">
+                            </div>
+                            <div class="form-grid-2" style="margin-top:6px;">
+                                <div>
+                                    <label class="sub-label" for="imgCompareLabel1Input">ป้ายกำกับภาพที่ 1</label>
+                                    <input type="text" id="imgCompareLabel1Input" class="form-input" placeholder="เช่น ตัวอย่างที่ 1 / ก่อนปรับปรุง">
+                                </div>
+                                <div>
+                                    <label class="sub-label" for="imgCompareLabel2Input">ป้ายกำกับภาพที่ 2</label>
+                                    <input type="text" id="imgCompareLabel2Input" class="form-input" placeholder="เช่น ตัวอย่างที่ 2 / หลังปรับปรุง">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Caption, Alt Text & Copyright Attribution -->
+                    <div class="form-section-box">
+                        <div class="form-label">3. คำอธิบายภาพและการอ้างอิงลิขสิทธิ์ (Caption, Alt Text &amp; Attribution)</div>
+                        <div class="form-grid-2">
+                            <div>
+                                <label class="sub-label" for="imgCaptionInput">คำอธิบายใต้ภาพ (Caption)</label>
+                                <input type="text" id="imgCaptionInput" class="form-input" placeholder="อธิบายสั้น ๆ ว่าภาพนี้สื่อถึงเรื่องใดในบทเรียน">
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgAltInput">ข้อความกำกับภาพ (Alt Text)</label>
+                                <input type="text" id="imgAltInput" class="form-input" placeholder="คำบรรยายภาพสำหรับระบบช่วยการเข้าถึง">
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgSourceInput">แหล่งที่มา (Image Source / Website)</label>
+                                <input type="text" id="imgSourceInput" class="form-input" placeholder="เช่น Unsplash, Wikimedia, เว็บไซต์ร้านค้าตัวอย่าง">
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgCreatorInput">ผู้สร้างสรรค์ / เจ้าของผลงาน (Creator)</label>
+                                <input type="text" id="imgCreatorInput" class="form-input" placeholder="ระบุชื่อผู้สร้างหรือองค์กรเจ้าของภาพ">
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgLicenseSelect">สัญญาอนุญาต (License)</label>
+                                <select id="imgLicenseSelect" class="form-select">
+                                    <option value="Educational Fair Use (ใช้เพื่อการศึกษาในชั้นเรียน)">Educational Fair Use (ใช้เพื่อการศึกษา)</option>
+                                    <option value="Own Work / สื่อสร้างเองของสถานศึกษา">Own Work / สื่อสร้างเองของสถานศึกษา</option>
+                                    <option value="CC0 / Public Domain">CC0 / Public Domain (สาธารณสมบัติ)</option>
+                                    <option value="CC BY 4.0 (ต้องระบุชื่อผู้สร้าง)">CC BY 4.0 (ต้องระบุที่มา)</option>
+                                    <option value="Unsplash / Pexels Free License">Unsplash / Pexels License</option>
+                                    <option value="ได้รับอนุญาตจากเจ้าของสิทธิ์">ได้รับอนุญาตจากเจ้าของสิทธิ์</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="sub-label" for="imgAttributionInput">ข้อความอ้างอิงลิขสิทธิ์ (Attribution Text)</label>
+                                <input type="text" id="imgAttributionInput" class="form-input" placeholder="เช่น ภาพประกอบเพื่อการศึกษาจาก...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="img-form-actions">
+                        <button type="button" id="btnSaveAssetToSlide" class="nav-btn primary" disabled>
+                            <i class="fa-solid fa-floppy-disk"></i> บันทึกและแสดงภาพในสไลด์
+                        </button>
+                        <button type="button" id="btnCancelEditAsset" class="nav-btn" style="display:none;">
+                            <i class="fa-solid fa-xmark"></i> ยกเลิกการแก้ไข
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live Preview & Added Slide Assets Manager -->
+                <div class="img-preview-col">
+                    <!-- Live Preview Card -->
+                    <div class="preview-card-box">
+                        <div class="preview-card-head">
+                            <span><i class="fa-solid fa-eye"></i> ตัวอย่างภาพก่อนบันทึก (Live Image Preview)</span>
+                            <span id="previewMetaBadge" class="preview-meta-pill">ยังไม่ได้โหลดภาพ</span>
+                        </div>
+                        <div class="preview-stage" id="imgPreviewStage">
+                            <div id="imgPreviewEmptyState" class="preview-empty-state">
+                                <i class="fa-regular fa-image" style="font-size:38px; color:#94A3B8;"></i>
+                                <p>วาง URL รูปภาพด้านซ้ายแล้วกด <strong>"ตรวจสอบ &amp; โหลดตัวอย่าง"</strong><br>หรือเลือกไฟล์ภาพจากคอมพิวเตอร์</p>
+                            </div>
+                            <!-- Never shows broken image icon: hidden until verified onload -->
+                            <figure id="imgPreviewFigure" class="preview-figure" style="display:none;">
+                                <div class="preview-img-wrap">
+                                    <img id="imgPreviewElement" src="" alt="ตัวอย่างภาพประกอบ" style="display:none;">
+                                    <span id="previewAnnotationChip" class="preview-annotation-chip" style="display:none;"></span>
+                                </div>
+                                <figcaption id="imgPreviewCaptionBar" class="preview-caption-bar"></figcaption>
+                            </figure>
+                        </div>
+                        <div class="preview-footer-bar">
+                            <span id="previewStorageNotice" class="preview-storage-notice">รักษาสัดส่วนภาพต้นฉบับอัตโนมัติ (ไม่ยืดหรือบิดภาพ)</span>
+                            <button type="button" id="btnTestPreviewZoom" class="ctrl-btn" disabled>
+                                <i class="fa-solid fa-magnifying-glass-plus"></i> ทดสอบขยายภาพ (Zoom)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Added Images List Card -->
+                    <div class="added-assets-card-box">
+                        <div class="preview-card-head">
+                            <span><i class="fa-solid fa-layer-group"></i> รายการภาพประกอบที่เพิ่มในสไลด์ (<strong id="addedAssetsCount">0</strong> ภาพ)</span>
+                            <div style="display:flex; gap:6px; align-items:center;">
+                                <select id="assetListFilterSelect" class="form-select" style="padding:3px 8px; font-size:12px; width:auto;">
+                                    <option value="ALL">แสดงทุกสไลด์</option>
+                                    <option value="CURRENT">เฉพาะสไลด์ปัจจุบัน</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="addedAssetsList" class="added-assets-list">
+                            <!-- Populated dynamically by app.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. Unified Universal Visual Zoom & Lightbox Component (ADD-ON V11.2 — PART 6) -->
+    <div class="modal-overlay lightbox-overlay no-print" id="universalLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+        <div class="lightbox-container">
+            <div class="lightbox-topbar">
+                <div class="lightbox-title-wrap">
+                    <i class="fa-solid fa-magnifying-glass-plus" style="color:#60A5FA;"></i>
+                    <span id="lightboxTitle" class="lightbox-title">ขยายดูรายละเอียดภาพประกอบ (Universal Visual Zoom)</span>
+                    <span id="lightboxStorageBadge" class="lightbox-badge"></span>
+                </div>
+                <div class="lightbox-controls">
+                    <button type="button" id="btnZoomOut" class="ctrl-btn" title="ย่อภาพ (Zoom Out -)">
+                        <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    </button>
+                    <span id="lightboxZoomLevel" class="zoom-level-indicator">100%</span>
+                    <button type="button" id="btnZoomIn" class="ctrl-btn" title="ขยายภาพ (Zoom In +)">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </button>
+                    <button type="button" id="btnZoomFit" class="ctrl-btn" title="ปรับขนาดพอดีหน้าจอ (Fit to Screen)">
+                        <i class="fa-solid fa-compress"></i> พอดีจอ
+                    </button>
+                    <button type="button" id="btnZoomReset" class="ctrl-btn" title="รีเซ็ตขนาด 100% (Reset Zoom)">
+                        <i class="fa-solid fa-rotate-left"></i> 100%
+                    </button>
+                    <button type="button" id="btnLightboxEditAsset" class="ctrl-btn accent" style="display:none;" title="แก้ไขภาพประกอบนี้">
+                        <i class="fa-solid fa-pen-to-square"></i> แก้ไขภาพนี้
+                    </button>
+                    <button type="button" id="closeLightbox" class="icon-close" title="ปิดหน้าต่างขยายภาพ (ESC)" aria-label="ปิดหน้าต่างขยายภาพ">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lightbox-stage" id="lightboxStage">
+                <img id="lightboxImage" src="" alt="" draggable="false">
+            </div>
+
+            <div class="lightbox-footer">
+                <div id="lightboxCaptionText" class="lightbox-caption">คลิกปุ่ม +/- หรือหมุนลูกกลิ้งเมาส์เพื่อซูม และลากเมาส์เพื่อเลื่อนดูรายละเอียดภาพ (กด ESC เพื่อปิด)</div>
+                <div id="lightboxAttributionText" class="lightbox-attribution"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="slides-data.js"></script>
+    <script src="custom-assets-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

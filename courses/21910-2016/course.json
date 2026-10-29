@@ -1,0 +1,33 @@
+{
+  "courseId": "21910-2016",
+  "courseName": "การสร้างเว็บไซต์สำหรับธุรกิจดิจิทัล",
+  "status": "พร้อมใช้งาน",
+  "description": "หลักสูตร ปวช. สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล — ความรู้พื้นฐานเกี่ยวกับเว็บไซต์ โครงสร้างสถาปัตยกรรมเว็บ และธุรกิจดิจิทัล",
+  "units": [
+    {
+      "unitId": "unit-01",
+      "unitNumber": 1,
+      "title": "ความรู้พื้นฐานเกี่ยวกับเว็บไซต์และธุรกิจดิจิทัล",
+      "status": "พร้อมใช้งาน",
+      "slideCount": 54,
+      "presentations": [
+        {
+          "id": "21910-2016-u01-html",
+          "title": "สไลด์สื่อการสอน HTML Interactive (สัปดาห์ที่ 1: ความรู้พื้นฐานเกี่ยวกับเว็บไซต์และธุรกิจดิจิทัล)",
+          "presentationType": "html-interactive",
+          "slideCount": 26,
+          "entryPoint": "courses/21910-2016/unit-01/html-presentation/index.html",
+          "features": ["Interactive Quiz", "Interactive Glossary", "Before/After Slider", "Interactive Diagram", "Speaker Notes", "Presentation Timer", "PDF Export"]
+        },
+        {
+          "id": "21910-2016-u01-w02-html",
+          "title": "สไลด์สื่อการสอน HTML Interactive (สัปดาห์ที่ 2: การทำงานของเว็บไซต์และการวิเคราะห์เว็บไซต์ธุรกิจ)",
+          "presentationType": "html-interactive",
+          "slideCount": 28,
+          "entryPoint": "courses/21910-2016/unit-01/html-presentation-w2/index.html",
+          "features": ["Universal Visual Zoom & Lightbox", "Universal Image URL Import", "Dual-Screen Presenter Mode", "Editable Speaker Notes", "Interactive Architecture & Diagrams"]
+        }
+      ]
+    }
+  ]
+}

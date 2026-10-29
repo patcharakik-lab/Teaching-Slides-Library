@@ -1,0 +1,34 @@
+{
+  "courseId": "21910-1002",
+  "courseName": "การวิเคราะห์ความต้องการทางธุรกิจ",
+  "status": "พร้อมใช้งาน",
+  "description": "หลักสูตร ปวช. สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล — การวิเคราะห์ความต้องการทางธุรกิจและการวิเคราะห์ข้อมูล",
+  "units": [
+    {
+      "unitId": "unit-01",
+      "unitNumber": 1,
+      "title": "ความรู้พื้นฐานเกี่ยวกับความต้องการทางธุรกิจ",
+      "status": "พร้อมใช้งาน",
+      "slideCount": 49,
+      "presentations": [
+        {
+          "id": "21910-1002-u01-html",
+          "title": "สไลด์สื่อการสอน HTML Interactive",
+          "presentationType": "html-interactive",
+          "slideCount": 42,
+          "entryPoint": "courses/21910-1002/unit-01/html-presentation/index.html",
+          "features": ["Interactive Quiz", "Before/After Slider", "Interactive Diagram", "Speaker Notes", "Presentation Timer", "PDF Export"]
+        },
+        {
+          "id": "21910-1002-u01-png",
+          "title": "สไลด์ภาพ Full-Image PNG",
+          "presentationType": "image-slides",
+          "slideCount": 7,
+          "manifestPath": "unit-01/slides-manifest.json",
+          "speakerNotesPath": "unit-01/speaker-notes.json",
+          "features": ["Full-Image 16:9", "Slide Organizer", "Presenter Mode Dual-Window", "Teacher Notes Editor", "PDF Export"]
+        }
+      ]
+    }
+  ]
+}

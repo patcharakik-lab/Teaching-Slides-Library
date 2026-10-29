@@ -1,0 +1,25 @@
+{
+  "courseId": "21910-2007",
+  "courseName": "โปรแกรมกราฟิกเพื่อสร้างสื่อดิจิทัล",
+  "status": "พร้อมใช้งาน",
+  "description": "หลักสูตร ปวช. สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล — ความรู้พื้นฐานเกี่ยวกับภาพกราฟิกดิจิทัลและการเตรียมงานออกแบบ",
+  "units": [
+    {
+      "unitId": "unit-01",
+      "unitNumber": 1,
+      "title": "ความรู้พื้นฐานเกี่ยวกับภาพกราฟิกดิจิทัลและการเตรียมงานออกแบบ",
+      "status": "พร้อมใช้งาน",
+      "slideCount": 28,
+      "presentations": [
+        {
+          "id": "21910-2007-u01-html",
+          "title": "สไลด์สื่อการสอน HTML Interactive",
+          "presentationType": "html-interactive",
+          "slideCount": 28,
+          "entryPoint": "courses/21910-2007/unit-01/html-presentation/index.html",
+          "features": ["Interactive Quiz", "Interactive Glossary", "Before/After Slider", "Interactive Diagram", "Speaker Notes", "Presentation Timer", "PDF Export"]
+        }
+      ]
+    }
+  ]
+}

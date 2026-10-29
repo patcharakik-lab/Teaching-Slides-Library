@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21910-2008 การผลิตสื่อดิจิทัล — หน่วยที่ 2: การวางแผนและออกแบบสื่อดิจิทัล</title>
+    <!-- Google Fonts: Prompt, Sarabun, Inter, Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Sarabun:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- MASTER PROMPT V10: GitHub Pages Asset Base Normalizer & Path Resolver -->
+    <script>
+        (function() {
+            var base = document.baseURI || window.location.href;
+            base = base.split('?')[0].split('#')[0];
+            if (!base.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(base)) {
+                base += '/';
+            } else if (/\.[a-zA-Z0-9]+$/.test(base)) {
+                base = base.substring(0, base.lastIndexOf('/') + 1);
+            }
+            window.__ASSET_BASE_URI__ = base;
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Top Control Bar (Separated from Slide Canvas, Hidden in Print/PDF) -->
+    <header class="top-bar no-print" role="banner">
+        <div class="brand-info">
+            <span class="course-badge" title="รายวิชา 21910-2008 การผลิตสื่อดิจิทัล">
+                <i class="fa-solid fa-clapperboard brand-icon-fa" aria-hidden="true"></i>
+                <span>21910-2008 การผลิตสื่อดิจิทัล</span>
+            </span>
+            <span class="unit-title">หน่วยที่ 2: การวางแผนและออกแบบสื่อดิจิทัล (ปวช. เทคโนโลยีธุรกิจดิจิทัล • 8 ชั่วโมง)</span>
+        </div>
+        <div class="controls" role="toolbar" aria-label="เครื่องมือควบคุมการนำเสนอ">
+            <button id="btnGrid" class="ctrl-btn" title="สารบัญสไลด์ / ภาพรวมทั้งหมด" aria-label="เปิดสารบัญสไลด์">
+                <i class="fa-solid fa-table-cells"></i> <span>สารบัญสไลด์</span>
+            </button>
+            <button id="btnVocab" class="ctrl-btn" title="คลังคำศัพท์เทคนิค (กด G)" aria-label="เปิดคลังคำศัพท์เทคนิค">
+                <i class="fa-solid fa-book-open-reader"></i> <span>คำศัพท์ (G)</span>
+            </button>
+            <button id="btnNotes" class="ctrl-btn" title="บันทึกคำอธิบายสำหรับครู (กด N)" aria-label="เปิดบันทึกคำอธิบายสำหรับครู">
+                <i class="fa-solid fa-chalkboard-user"></i> <span>บทบรรยายครู (N)</span>
+            </button>
+            <button id="btnPresenter" class="ctrl-btn accent" title="โหมดผู้สอน Presenter Mode (กด P)" aria-label="เปิดโหมดผู้สอน">
+                <i class="fa-solid fa-desktop"></i> <span>โหมดผู้สอน (P)</span>
+            </button>
+            <button id="btnPrint" class="ctrl-btn primary" title="บันทึกหรือพิมพ์เป็น PDF ทุกสไลด์ (16:9)" aria-label="บันทึกเป็น PDF">
+                <i class="fa-solid fa-file-pdf"></i> <span>Save as PDF</span>
+            </button>
+            <button id="btnFullscreen" class="ctrl-btn" title="โหมดเต็มหน้าจอ (กด F)" aria-label="สลับโหมดเต็มหน้าจอ">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. Main Presentation Stage (1600x900 16:9 Responsive Canvas) -->
+    <main class="stage-wrapper" id="stageWrapper" role="main">
+        <div class="slide-scale-wrapper" id="slideScaleWrapper">
+            <div class="slide-viewport" id="slideViewport" aria-live="polite">
+                <!-- Slides injected dynamically from slides-data.js -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 3. Bottom Navigation & Progress Bar (Hidden in Print/PDF) -->
+    <footer class="bottom-bar no-print" role="contentinfo">
+        <div class="progress-track" aria-label="แถบความคืบหน้าการเรียน">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="nav-row">
+            <div class="slide-meta">
+                <span class="time-badge" id="slideTimerBadge"><i class="fa-regular fa-clock"></i> แผนการสอน 8 ชั่วโมง (สัปดาห์ที่ 3–4)</span>
+                <span class="section-indicator" id="sectionIndicator">บทนำ</span>
+            </div>
+            <div class="nav-buttons">
+                <button id="btnFirst" class="nav-btn" title="สไลด์แรก (Home)" aria-label="สไลด์แรก">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button id="btnPrev" class="nav-btn" title="สไลด์ก่อนหน้า (←)" aria-label="สไลด์ก่อนหน้า">
+                    <i class="fa-solid fa-chevron-left"></i> ก่อนหน้า
+                </button>
+                <div class="slide-counter" aria-label="ตัวนับหมายเลขสไลด์">
+                    <input type="number" id="slideInput" min="1" max="32" value="1" aria-label="พิมพ์หมายเลขสไลด์เพื่อข้ามไป">
+                    <span>/ <strong id="totalSlidesCount">32</strong></span>
+                </div>
+                <button id="btnNext" class="nav-btn primary" title="สไลด์ถัดไป (→ / Space)" aria-label="สไลด์ถัดไป">
+                    ถัดไป <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button id="btnLast" class="nav-btn" title="สไลด์สุดท้าย (End)" aria-label="สไลด์สุดท้าย">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+            </div>
+            <div class="shortcut-hint" aria-hidden="true">
+                <span><kbd>←</kbd><kbd>→</kbd> เลื่อน</span>
+                <span><kbd>G</kbd> คำศัพท์</span>
+                <span><kbd>N</kbd> บทครู</span>
+                <span><kbd>P</kbd> ผู้สอน</span>
+                <span><kbd>F</kbd> เต็มจอ</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 4. Speaker Notes Drawer for Teacher (Hidden in Print) -->
+    <aside class="notes-drawer no-print" id="notesDrawer" aria-label="บันทึกคำอธิบายสำหรับครู">
+        <div class="drawer-header">
+            <div>
+                <h3><i class="fa-solid fa-microphone-lines"></i> บันทึกการสอนสำหรับครู (แผนการสอน 8 ชั่วโมง)</h3>
+                <p id="notesTimeEstimate" class="notes-sub">เวลาแนะนำสำหรับสไลด์นี้: 3–5 นาที</p>
+            </div>
+            <button id="closeNotes" class="icon-close" aria-label="ปิดบันทึกสำหรับครู"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="notesContent">
+            <!-- Populated dynamically by app.js -->
+        </div>
+    </aside>
+
+    <!-- 5. Slide Navigator / Overview Modal (Hidden in Print) -->
+    <div class="modal-overlay no-print" id="gridModal" role="dialog" aria-modal="true" aria-labelledby="gridModalTitle">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="gridModalTitle"><i class="fa-solid fa-table-cells"></i> สารบัญสไลด์ (Slide Navigator — หน่วยที่ 2: การวางแผนและออกแบบสื่อดิจิทัล)</h2>
+                <button id="closeGrid" class="icon-close" aria-label="ปิดสารบัญสไลด์"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="grid-list" id="gridList">
+                <!-- Populated dynamically by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Interactive Glossary Modal (Hidden in Print) -->
+    <div class="modal-overlay no-print" id="vocabModal" role="dialog" aria-modal="true" aria-labelledby="vocabModalTitle">
+        <div class="modal-container vocab-container">
+            <div class="modal-header">
+                <div>
+                    <h2 id="vocabModalTitle"><i class="fa-solid fa-book-open-reader"></i> คลังคำศัพท์เทคนิคการวางแผนและออกแบบสื่อดิจิทัล (Digital Media Glossary)</h2>
+                    <p class="modal-sub">อธิบายด้วยภาษาง่าย พร้อมตัวอย่างการใช้งานจริงสำหรับนักเรียน ปวช.</p>
+                </div>
+                <div class="vocab-search-wrap">
+                    <input type="search" id="vocabSearchInput" placeholder="ค้นหาคำศัพท์ เช่น Media Planning, Brief, Storyboard, Script, Mood Board, Core Message..." aria-label="ค้นหาคำศัพท์">
+                    <button id="closeVocab" class="icon-close" aria-label="ปิดคลังคำศัพท์"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="vocab-list" id="vocabList">
+                <!-- Populated dynamically by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Inline Glossary Quick Popup Card (Portal in Document Body, Hidden in Print) -->
+    <div class="glossary-popover no-print" id="glossaryPopover" role="dialog" aria-hidden="true">
+        <div class="glossary-popover-header">
+            <span id="popoverTerm" class="popover-term">Term</span>
+            <button id="closePopover" class="popover-close" aria-label="ปิดคำอธิบายศัพท์"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="popoverBody" class="glossary-popover-body"></div>
+    </div>
+
+    <!-- 8. Presenter Mode Overlay / Console (Hidden in Print) -->
+    <div class="modal-overlay presenter-overlay no-print" id="presenterModal" role="dialog" aria-modal="true" aria-labelledby="presenterModalTitle">
+        <div class="presenter-container">
+            <div class="presenter-topbar">
+                <div class="presenter-title-group">
+                    <h2 id="presenterModalTitle"><i class="fa-solid fa-chalkboard-user"></i> โหมดผู้สอน (Presenter Console)</h2>
+                    <span class="presenter-slide-badge" id="presenterSlideBadge">สไลด์ที่ 1 / 32</span>
+                </div>
+                <div class="presenter-timer-bar">
+                    <div class="timer-display">
+                        <span class="timer-label">เวลาที่ใช้ไป:</span>
+                        <strong id="presenterElapsed">00:00</strong>
+                    </div>
+                    <button id="btnTimerToggle" class="ctrl-btn primary"><i class="fa-solid fa-play"></i> เริ่ม/พักเวลา</button>
+                    <button id="btnTimerReset" class="ctrl-btn"><i class="fa-solid fa-rotate-left"></i> รีเซ็ต</button>
+                    <button id="btnOpenPopupPresenter" class="ctrl-btn accent" title="แยกหน้าต่างผู้สอนสำหรับต่อ 2 จอ (Dual Screen)">
+                        <i class="fa-solid fa-up-right-from-square"></i> แยกหน้าต่างผู้สอน (2 จอ)
+                    </button>
+                    <button id="closePresenter" class="icon-close" aria-label="ปิดโหมดผู้สอน"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="presenter-grid">
+                <!-- Left Column: Current Slide + Next Slide Preview + Controls -->
+                <div class="presenter-left">
+                    <div class="presenter-card current-preview-card">
+                        <div class="presenter-card-head">
+                            <span><i class="fa-solid fa-tv"></i> สไลด์ปัจจุบัน (Current Slide)</span>
+                            <span id="presenterRecTime" class="rec-time-pill">เวลาแนะนำ: 3 นาที</span>
+                        </div>
+                        <div class="presenter-current-summary" id="presenterCurrentSummary"></div>
+                    </div>
+
+                    <div class="presenter-card next-preview-card">
+                        <div class="presenter-card-head">
+                            <span><i class="fa-solid fa-forward"></i> สไลด์ถัดไป (Next Slide Preview)</span>
+                        </div>
+                        <div class="presenter-next-summary" id="presenterNextSummary"></div>
+                    </div>
+
+                    <div class="presenter-nav-actions">
+                        <button id="presenterPrevBtn" class="nav-btn"><i class="fa-solid fa-chevron-left"></i> สไลด์ก่อนหน้า</button>
+                        <button id="presenterNextBtn" class="nav-btn primary">สไลด์ถัดไป <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Detailed Teacher Speaker Notes -->
+                <div class="presenter-right">
+                    <div class="presenter-card notes-full-card">
+                        <div class="presenter-card-head">
+                            <span><i class="fa-solid fa-microphone-lines"></i> บทบรรยายครู &amp; แนวทางถาม-ตอบในชั้นเรียน</span>
+                            <span id="presenterTotalProgress" class="rec-time-pill">แผนรวม 8 ชั่วโมง (สัปดาห์ที่ 3–4)</span>
+                        </div>
+                        <div class="presenter-notes-scroll" id="presenterNotesBody"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="slides-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
